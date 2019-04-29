@@ -6,7 +6,7 @@
 
 ### Target
 
-一个 R 包打包了 ElegantBook 模版的 bookdown 扩展
+一个 R 包打包了 [ElegantBook 模版](https://github.com/ElegantLaTeX/ElegantBook) 的 bookdown 扩展
 
 
 
@@ -14,6 +14,7 @@
 ### TO DO
 
 - [ ] 制作封面，注意此封面只在生成 PDF 时出现
+- [ ] 首先在bookdown下完美复现原 LaTeX 模版的功能
 - [ ] 运行跑通 Gitbook/PDF 输出
 - [ ] 各个 block 转自定义的 sidebar 借助 Pandoc 和 Lua 实现的 Pandoc filters
 - [ ] 各个 block 的 CSS 定制，提示、警告等图标
@@ -23,3 +24,9 @@
 - [ ] 是保持 Pandoc 模版尽量不动，还是保持 ElegantBook 模版不动？
 - [ ] 参考 [bookdown-crc](https://github.com/yihui/bookdown-crc) 和 [bookdown-chinese](https://github.com/yihui/bookdown-chinese) 的设计
 
+
+### 致谢
+
+1. [ElegantBook](https://github.com/ElegantLaTeX/ElegantBook) 开发者
+1. [bookdown](https://github.com/rstudio/bookdown) 开发者
+1. [Pandoc](https://pandoc.org) 开发者
