@@ -1,0 +1,25 @@
+book_filename: "ElegantBookdown"
+delete_merged_file: true
+language:
+  label:
+    fig: "图 "
+    tab: "表 "
+    thm: "定理 "
+    lem: "引理 "
+    cor: "推论 "
+    prp: "命题 "
+    def: "定义 "
+    exm: "例 "
+    exr: "练习 "
+  ui:
+    edit: "编辑"
+    chapter_name: ["第 ", " 章"]
+
+rmd_files: 
+  - "index.Rmd"
+  - "01-introduction.Rmd"
+ # - "02-example.Rmd"
+  
+  - "05-appendix.Rmd"
+  # 参考文献  
+  - "06-references.Rmd"
