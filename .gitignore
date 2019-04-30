@@ -1,0 +1,13 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+.DS_Store
+
+elegantbook.cls
+
+rsconnect/
+_book/
+_bookdown_files/
+ElegantBook/
+ElegantBookdown.rds

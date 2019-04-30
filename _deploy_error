@@ -1,0 +1,15 @@
+#!/bin/sh
+
+set -e
+
+[ -z "${GITHUB_TOKEN}" ] && exit 0
+[ "${TRAVIS_BRANCH}" != "master" ] && exit 0
+
+mkdir book-error && cd book-error
+git clone -b error https://${GITHUB_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git .
+cd ..
+mv ElegantBookdown.log ElegantBookdown.md ElegantBookdown.tex ElegantBookdown.pdf book-error/
+cd book-error
+git add -A
+git commit -m"report error by (travis build ${TRAVIS_BUILD_NUMBER})"
+git push -q -f origin error

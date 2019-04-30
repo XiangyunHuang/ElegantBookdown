@@ -1,0 +1,79 @@
+# R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
+
+language: r
+dist: xenial
+
+cache:
+  packages: true
+  directories:
+    - _bookdown_files
+    - $HOME/.npm
+
+
+latex: false
+branches:
+  only:
+    - master
+    - release
+    - stable
+
+pandoc_version: 2.7.2
+
+git:
+  depth: 5
+  submodules: false
+  
+repos:
+  CRAN: https://cloud.r-project.org
+
+addons:
+  apt:
+    packages:
+      - ghostscript
+      - imagemagick
+      - optipng
+
+before_install:
+  # TinyTeX
+  #- curl -fLo /tmp/tinytex.tar.gz https://travis-bin.yihui.name/tinytex.tar.gz
+  #- tar -xzf /tmp/tinytex.tar.gz -C $HOME
+  #- export PATH=$HOME/.TinyTeX/bin/x86_64-linux:$PATH
+  #- tlmgr repository list
+  #- tlmgr repository add https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet
+  #- tlmgr repository set https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet
+  #- tlmgr update --self --all
+  #- tlmgr install $(cat latex/TeXLive.pkgs | tr '\n' ' ') || true
+  # CTAN mirrors
+  #- curl -fLo elegantbook.cls https://raw.githubusercontent.com/ElegantLaTeX/ElegantBook/master/elegantbook.cls
+  - nvm install stable
+  - npm install netlify-cli -g
+  # MSG
+  - export COMMIT_MSG=$(git log -1 --format='%h %<(50,trunc)%s')
+  - echo $COMMIT_MSG
+  - export DEPLOY_MSG=${COMMIT_MSG//[\'\"\`]/}
+  - echo $DEPLOY_MSG
+  - chmod +x ./_deploy_error
+
+before_script:
+  - Rscript -e 'update.packages(lib.loc = .libPaths()[1], ask = FALSE)'
+
+script:
+  - Rscript -e 'bookdown::render_book("index.Rmd")'
+
+deploy:
+  - provider: script
+    script: netlify deploy --prod --dir _book --message "$DEPLOY_MSG"
+    skip_cleanup: true
+  - provider: pages
+    skip_cleanup: true
+    github_token: $GITHUB_TOKEN
+    on:
+      branch: master
+    local_dir: _book
+
+after_failure:
+  - tlmgr --version
+  - tlmgr info elegantbook
+  - tlmgr info --list --only-installed --data name
+  - ./_deploy_error
+  # 最好此时把所有文件推送到新的分支 error

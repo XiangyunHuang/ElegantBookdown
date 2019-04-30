@@ -1,0 +1,150 @@
+\documentclass[$for(classoption)$$classoption$$sep$,$endfor$]{$documentclass$}
+
+$if(natbib)$
+\usepackage$if(natbiboptions)$[$for(natbiboptions)$$natbiboptions$$sep$,$endfor$]$endif${natbib}
+\bibliographystyle{$if(biblio-style)$$biblio-style$$else$plainnat$endif$}
+$endif$
+$if(biblatex)$
+\usepackage$if(biblio-style)$[style=$biblio-style$]$endif${biblatex}
+$if(biblatexoptions)$\ExecuteBibliographyOptions{$for(biblatexoptions)$$biblatexoptions$$sep$,$endfor$}$endif$
+$for(bibliography)$
+\addbibresource{$bibliography$}
+$endfor$
+$endif$
+
+\hypersetup{
+  pdfcreator={LaTeX via pandoc}}
+
+$if(verbatim-in-note)$
+\usepackage{fancyvrb}
+\VerbatimFootnotes % allows verbatim text in footnotes
+$endif$
+
+$if(tables)$
+\usepackage{longtable,booktabs}
+$endif$
+
+$if(links-as-notes)$
+% Make links footnotes instead of hotlinks:
+\renewcommand{\href}[2]{#2\footnote{\url{#1}}}
+$endif$
+
+$if(strikeout)$
+\usepackage[normalem]{ulem}
+% avoid problems with \sout in headers with hyperref:
+\pdfstringdefDisableCommands{\renewcommand{\sout}{}}
+$endif$
+
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+$if(numbersections)$
+\setcounter{secnumdepth}{5}
+$else$
+\setcounter{secnumdepth}{0}
+$endif$
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+$if(title)$
+  \title{$title$}
+$endif$
+
+$if(subtitle)$
+\subtitle{$subtitle$}
+$endif$
+
+$if(author)$
+  \author{$for(author)$$author$$sep$ \\ $endfor$}
+$endif$
+
+$if(date)$
+  \date{$date$}
+$endif$
+
+% logo 图案
+$if(logo)$
+  \logo{$logo$}
+$endif$
+% 封面图片
+$if(cover)$
+  \cover{$cover$}
+$endif$
+% 版本号
+$if(version)$
+  \version{$version$}
+$endif$
+% 机构名
+$if(institute)$
+  \institute{$institute$}
+$endif$
+% 引用格言
+$if(extrainfo)$
+  \extrainfo{$extrainfo$}
+$endif$
+% 导言区 preamble
+$for(header-includes)$
+$header-includes$
+$endfor$
+
+\begin{document}
+% 封面
+$if(title)$
+\maketitle
+$endif$
+% 插入 before_body.tex
+$for(include-before)$
+$include-before$
+
+$endfor$
+
+% 目录
+$if(toc)$
+{
+$if(colorlinks)$
+\hypersetup{linkcolor=$if(toccolor)$$toccolor$$else$black$endif$}
+$endif$
+\setcounter{tocdepth}{$toc-depth$}
+\tableofcontents
+}
+$endif$
+% 表目录
+$if(lot)$
+\listoftables
+$endif$
+% 图目录
+$if(lof)$
+\listoffigures
+$endif$
+% 书籍主体部分
+$body$
+% 参考文献
+$if(natbib)$
+$if(bibliography)$
+$if(biblio-title)$
+$if(book-class)$
+\renewcommand\bibname{$biblio-title$}
+$else$
+\renewcommand\refname{$biblio-title$}
+$endif$
+$endif$
+\bibliography{$for(bibliography)$$bibliography$$sep$,$endfor$}
+
+$endif$
+$endif$
+
+$if(biblatex)$
+\printbibliography$if(biblio-title)$[title=$biblio-title$]$endif$
+
+$endif$
+
+% 插入 after_body.tex
+$for(include-after)$
+$include-after$
+
+$endfor$
+
+\end{document}
