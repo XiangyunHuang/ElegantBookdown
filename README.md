@@ -3,11 +3,22 @@
 ---
 
 
+<img src="image/elegantbook-cn/elegantbook-cn-0.png" width="50%" height="50%"><img src="image/elegantbook-cn/elegantbook-cn-1.png" width="50%" height="50%">
+
+<img src="image/elegantbook-cn/elegantbook-cn-2.png" width="50%" height="50%"><img src="image/elegantbook-cn/elegantbook-cn-3.png" width="50%" height="50%">
+
+<img src="image/elegantbook-cn/elegantbook-cn-4.png" width="50%" height="50%"><img src="image/elegantbook-cn/elegantbook-cn-5.png" width="50%" height="50%">
+
+<img src="image/elegantbook-cn/elegantbook-cn-6.png" width="50%" height="50%"><img src="image/elegantbook-cn/elegantbook-cn-7.png" width="50%" height="50%">
+
+<img src="image/elegantbook-cn/elegantbook-cn-8.png" width="50%" height="50%"><img src="image/elegantbook-cn/elegantbook-cn-9.png" width="50%" height="50%">
+
+<img src="image/elegantbook-cn/elegantbook-cn-10.png" width="50%" height="50%"><img src="image/elegantbook-cn/elegantbook-cn-11.png" width="50%" height="50%">
+<img src="image/elegantbook-cn/elegantbook-cn-12.png" width="50%" height="50%">
 
 ### Target
 
-一个 R 包打包了 [ElegantBook 模版](https://github.com/ElegantLaTeX/ElegantBook) 的 bookdown 扩展
-
+[ElegantBook](https://github.com/ElegantLaTeX/ElegantBook) 书籍模版的 bookdown 扩展
 
 
 
