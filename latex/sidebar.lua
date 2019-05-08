@@ -50,6 +50,13 @@ function Div(el)
     }
   end
 
+  if el.classes:includes("definition") then
+    return {
+      pandoc.RawBlock("latex", "\\begin{definition}"),
+      el,
+      pandoc.RawBlock("latex", "\\end{definition}")
+    }
+  end
   if el.classes:includes("remark") then
     return {
       pandoc.RawBlock("latex", "\\begin{remark}"),

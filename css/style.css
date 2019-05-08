@@ -12,3 +12,9 @@ pre {
 pre code {
   white-space: inherit;
 }
+
+/* Create a Two Column Layout https://pandoc.org/MANUAL.html#columns */
+.column {
+  float: left;
+  width: 50%;
+}
