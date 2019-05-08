@@ -19,8 +19,6 @@
 不管选用中文环境（`lang=cn`）还是英文环境（`lang=en`）均可输入中文。另外如果在笔记中使用了抄录环境（`lstlisting`），并抄录代码中有中文，请务必使用 `XeLaTeX` 编译。
 :::
 
-
-
 ## 颜色主题
 
 本模板内置 5 组颜色主题，分别为 `green`^[为原先默认主题]、`cyan`、`blue`（默认）、`gray`、`black`。另外还有一个自定义的选项  `nocolor`。调用颜色主题 `green` 的方法为
@@ -134,22 +132,16 @@ The content of theorem.
 
 其他相同用法的定理类环境有：
 
-\begin{table}[htbp]
-   \centering
-   \caption{定理类环境}
-     \begin{tabular}{llll}
-     \toprule
-     环境名 & 标签名 & 前缀 & 交叉引用 \\
-     \midrule
-     definition & label & def   & \lstinline|\ref{def:label}| \\
-     theorem & label & thm   & \lstinline|\ref{thm:label}| \\
-     lemma & label & lem   & \lstinline|\ref{lem:label}| \\
-     corrlary & label & cor   & \lstinline|\ref{cor:label}| \\
-     proposition & label & pro   & \lstinline|\ref{pro:label}| \\
-     \bottomrule
-     \end{tabular}%
-   \label{tab:theorem-class}%
-\end{table}
+Table: (\#tab:thm-env) 定理类环境
+
+| 环境名      | 标签名 | 前缀 | 交叉引用        |
+| :---------- | :---- | :-- | :---------------- |
+| definition  | label | def | `\ref{def:label}` |
+| theorem     | label | thm | `\ref{thm:label}` |
+| lemma       | label | lem | `\ref{lem:label}` |
+| corrlary    | label | cor | `\ref{cor:label}` |
+| proposition | label | pro | `\ref{pro:label}` |
+     
  
 
 ### 其他环境的使用
@@ -194,34 +186,25 @@ This is the content of example environment.
 
 本模板借助于 `tikz` 定制了 `itemize` 和 `enumerate` 环境，其中 `itemize` 环境修改了 3 层嵌套，而 `enumerate` 环境修改了 4 层嵌套（仅改变颜色）。示例如下
 
-\begin{minipage}[b]{0.49\textwidth}
-\begin{itemize}
-   \item first item of nesti;
-   \item second item of nesti;
-   \begin{itemize}
-      \item first item of nestii;
-      \item second item of nestii;
-      \begin{itemize}
-         \item first item of nestiii;
-         \item second item of nestiii.
-      \end{itemize}
-   \end{itemize}
-\end{itemize}
-\end{minipage}
-\begin{minipage}[b]{0.49\textwidth}
-\begin{enumerate}
-   \item first item of nesti;
-   \item second item of nesti;
-   \begin{enumerate}
-      \item first item of nestii;
-      \item second item of nestii;
-      \begin{enumerate}
-         \item first item of nestiii;
-         \item second item of nestiii.
-      \end{enumerate}
-   \end{enumerate}
-\end{enumerate}
-\end{minipage}
+:::::::::::::: {.columns}
+::: {.column width="49%"}
+- first item of nesti;
+- second item of nesti;
+  - first item of nestii;
+  - second item of nestii;
+     - first item of nestiii;
+     - second item of nestiii.
+:::
+::: {.column width="49%"}
+1. first item of nesti;
+1. second item of nesti;
+   1. first item of nestii;
+   1. second item of nestii;
+      1. first item of nestiii;
+      1. second item of nestiii.
+:::
+::::::::::::::
+
 
 ## 参考文献
 
@@ -244,4 +227,3 @@ This is the content of example environment.
 \markboth{Introduction}{} 
 The content of introduction.
 ```
-
