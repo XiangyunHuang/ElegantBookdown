@@ -28,52 +28,52 @@
 \documentclass[color=green]{elegantbook}
 ```
 
-\begin{table}[htbp]
-\caption{ElegantBook 模板中的颜色主题\label{tab:color thm}}
-\centering
-\begin{tabular}{c >{\colorset{green}}c
-                  >{\colorset{cyan}}c
-                  >{\colorset{blue}}c
-                  >{\colorset{gray}}c
-                  >{\colorset{black}}cc}
-\toprule
-	        & \textcolor{structure}{green}
-	        & \textcolor{structure}{cyan}
-	        & \textcolor{structure}{blue}
-	        & \textcolor{structure}{gray}
-	        & \textcolor{structure}{black}
-	        & 主要使用的环境 \\
-\midrule
-structure & \colorDemo{structure}
-  				& \colorDemo{structure}
-  				& \colorDemo{structure}
-  				& \colorDemo{structure}
-  				& \colorDemo{structure}
-  				& chapter \ section \ subsection \\
+<!-- \begin{table}[htbp] -->
+<!-- \caption{ElegantBook 模板中的颜色主题\label{tab:color thm}} -->
+<!-- \centering -->
+<!-- \begin{tabular}{c >{\colorset{green}}c -->
+<!--                   >{\colorset{cyan}}c -->
+<!--                   >{\colorset{blue}}c -->
+<!--                   >{\colorset{gray}}c -->
+<!--                   >{\colorset{black}}cc} -->
+<!-- \toprule -->
+<!-- 	        & \textcolor{structure}{green} -->
+<!-- 	        & \textcolor{structure}{cyan} -->
+<!-- 	        & \textcolor{structure}{blue} -->
+<!-- 	        & \textcolor{structure}{gray} -->
+<!-- 	        & \textcolor{structure}{black} -->
+<!-- 	        & 主要使用的环境 \\ -->
+<!-- \midrule -->
+<!-- structure & \colorDemo{structure} -->
+<!--   				& \colorDemo{structure} -->
+<!--   				& \colorDemo{structure} -->
+<!--   				& \colorDemo{structure} -->
+<!--   				& \colorDemo{structure} -->
+<!--   				& chapter \ section \ subsection \\ -->
 
-main      & \colorDemo{main}
-  				& \colorDemo{main}
-  				& \colorDemo{main}
-  				& \colorDemo{main}
-  				& \colorDemo{main}
-  				& definition \ exercise \ problem \\
+<!-- main      & \colorDemo{main} -->
+<!--   				& \colorDemo{main} -->
+<!--   				& \colorDemo{main} -->
+<!--   				& \colorDemo{main} -->
+<!--   				& \colorDemo{main} -->
+<!--   				& definition \ exercise \ problem \\ -->
 
-second    & \colorDemo{second}
-  				& \colorDemo{second}
-  				& \colorDemo{second}
-  				& \colorDemo{second}
-  				& \colorDemo{second}
-  				& theorem \ lemma \ corollary\\
+<!-- second    & \colorDemo{second} -->
+<!--   				& \colorDemo{second} -->
+<!--   				& \colorDemo{second} -->
+<!--   				& \colorDemo{second} -->
+<!--   				& \colorDemo{second} -->
+<!--   				& theorem \ lemma \ corollary\\ -->
 
-third     & \colorDemo{third}
-  				& \colorDemo{third}
-  				& \colorDemo{third}
-  				& \colorDemo{third}
-  				& \colorDemo{third}
-  				& proposition \\
-\bottomrule
-\end{tabular}
-\end{table}
+<!-- third     & \colorDemo{third} -->
+<!--   				& \colorDemo{third} -->
+<!--   				& \colorDemo{third} -->
+<!--   				& \colorDemo{third} -->
+<!--   				& \colorDemo{third} -->
+<!--   				& proposition \\ -->
+<!-- \bottomrule -->
+<!-- \end{tabular} -->
+<!-- \end{table} -->
 
 如需自定义颜色集，请使用文档类选项 `nocolor` 或 `color=none`，然后在导言区定义 structure、main、second、third 四个颜色，例如：
 
@@ -108,9 +108,9 @@ third     & \colorDemo{third}
 
 - *定理类环境*，包含标题和内容两部分，全部定理类环境的编号均以章节编号。根据格式的不同分为 3 种
    
-  - [**definition**]{.main} 环境，颜色为 [main]{.main}；
-  - [**theorem、lemma、corollary**]{.second} 环境，颜色为 [second]{.second}；
-  - [**proposition**]{.third} 环境，颜色为 [third]{.third}。
+  - **definition** 环境，颜色为 main；
+  - **theorem、lemma、corollary**环境，颜色为 second；
+  - **proposition** 环境，颜色为 third。
 
 - *示例类环境*，有 **example、exercise、problem** 环境（对应于例，练习，例题），自动编号，编号以章节为单位。
 - *证明类环境*，有 **proof、note** 环境，特点是，有引导符或者结尾符，**note** 环境有引导符号，**proof** 环境有证明完毕符号。
@@ -154,7 +154,7 @@ Table: (\#tab:thm-env) 定理类环境
 \end{example}
 ```
 
-::: example
+::: sidebar
 This is the content of example environment.
 :::
 
@@ -186,8 +186,8 @@ This is the content of example environment.
 
 本模板借助于 `tikz` 定制了 `itemize` 和 `enumerate` 环境，其中 `itemize` 环境修改了 3 层嵌套，而 `enumerate` 环境修改了 4 层嵌套（仅改变颜色）。示例如下
 
-:::::::::::::: {.columns}
-::: {.column width="49%"}
+:::: {.columns}
+::: {.column width="50%"}
 - first item of nesti;
 - second item of nesti;
   - first item of nestii;
@@ -195,7 +195,7 @@ This is the content of example environment.
      - first item of nestiii;
      - second item of nestiii.
 :::
-::: {.column width="49%"}
+::: {.column width="50%"}
 1. first item of nesti;
 1. second item of nesti;
    1. first item of nestii;
@@ -203,10 +203,10 @@ This is the content of example environment.
       1. first item of nestiii;
       1. second item of nestiii.
 :::
-::::::::::::::
+::::
 
 
-## 参考文献
+## 参考文献 {#ref}
 
 此模板使用了 BibTeX 来生成参考文献，在中文示例中，使用了 `gbt7714` 宏包。参考文献示例： 使用了中国一个大型的 P2P 平台（人人贷）的数据来检验男性投资者和女性投资者在投资表现上是否有显著差异。
 

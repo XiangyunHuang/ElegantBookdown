@@ -19,9 +19,9 @@ new_session: yes
 
 rmd_files: 
   - "index.Rmd"
-  #- "01-introduction.Rmd"
-  #- "02-example.Rmd"
+  - "01-introduction.Rmd"
+  - "02-example.Rmd"
   
-  #- "05-appendix.Rmd"
-  # 参考文献  
+  - "05-appendix.Rmd"
+
   - "06-references.Rmd"

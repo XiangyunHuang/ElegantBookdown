@@ -11,23 +11,29 @@ $for(bibliography)$
 \addbibresource{$bibliography$}
 $endfor$
 $endif$
+
 $if(listings)$
 \usepackage{listings}
 \newcommand{\passthrough}[1]{#1}
 $endif$
+
 $if(lhs)$
 \lstnewenvironment{code}{\lstset{language=Haskell,basicstyle=\small\ttfamily}}{}
 $endif$
+
 $if(highlighting-macros)$
 $highlighting-macros$
 $endif$
+
 $if(verbatim-in-note)$
 \usepackage{fancyvrb}
 \VerbatimFootnotes % allows verbatim text in footnotes
 $endif$
+
 $if(tables)$
 \usepackage{longtable,booktabs}
 $endif$
+
 $if(graphics)$
 \usepackage{graphicx,grffile}
 \makeatletter
@@ -39,15 +45,18 @@ $if(graphics)$
 % using explicit options in \includegraphics[width, height, ...]{}
 \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
 $endif$
+
 $if(links-as-notes)$
 % Make links footnotes instead of hotlinks:
 \renewcommand{\href}[2]{#2\footnote{\url{#1}}}
 $endif$
+
 $if(strikeout)$
 \usepackage[normalem]{ulem}
 % avoid problems with \sout in headers with hyperref:
 \pdfstringdefDisableCommands{\renewcommand{\sout}{}}
 $endif$
+
 $if(indent)$
 $else$
 \IfFileExists{parskip.sty}{%
@@ -57,14 +66,17 @@ $else$
 \setlength{\parskip}{6pt plus 2pt minus 1pt}
 }
 $endif$
+
 \setlength{\emergencystretch}{3em}  % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
 $if(numbersections)$
 \setcounter{secnumdepth}{5}
 $else$
 \setcounter{secnumdepth}{0}
 $endif$
+
 $if(subparagraph)$
 $else$
 % Redefines (sub)paragraphs to behave more like sections
@@ -126,9 +138,11 @@ $else$
   \posttitle{}
   $endif$
 $endif$
+
 $if(subtitle)$
 \subtitle{$subtitle$}
 $endif$
+
 $if(author)$
   \author{$for(author)$$author$$sep$ \\ $endfor$}
   $if(compact-title)$
@@ -141,6 +155,7 @@ $else$
   \preauthor{}\postauthor{}
   $endif$
 $endif$
+
 $if(date)$
   $if(compact-title)$
   \predate{\centering\large\emph}
@@ -229,10 +244,12 @@ $endif$
 
 $endif$
 $endif$
+
 $if(biblatex)$
 \printbibliography$if(biblio-title)$[title=$biblio-title$]$endif$
 
 $endif$
+
 $for(include-after)$
 $include-after$
 

@@ -1,4 +1,4 @@
-p.caption {
+.caption {
   color: #777;
   margin-top: 10px;
 }
@@ -11,10 +11,4 @@ pre {
 }
 pre code {
   white-space: inherit;
-}
-
-/* Create a Two Column Layout https://pandoc.org/MANUAL.html#columns */
-.column {
-  float: left;
-  width: 50%;
 }
