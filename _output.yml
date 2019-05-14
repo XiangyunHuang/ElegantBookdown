@@ -14,5 +14,6 @@ bookdown::pdf_book:
   citation_package: natbib
   keep_tex: yes
   toc_depth: 3
+  template: latex/template.tex
   pandoc_args: ["--top-level-division=chapter", "--lua-filter=latex/sidebar.lua"]
 bookdown::epub_book: default

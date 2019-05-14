@@ -15,11 +15,13 @@ language:
     edit: "编辑"
     chapter_name: ["第 ", " 章"]
 
+new_session: yes
+
 rmd_files: 
   - "index.Rmd"
-  - "01-introduction.Rmd"
-  - "02-example.Rmd"
+  #- "01-introduction.Rmd"
+  #- "02-example.Rmd"
   
-  - "05-appendix.Rmd"
+  #- "05-appendix.Rmd"
   # 参考文献  
   - "06-references.Rmd"
