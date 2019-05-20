@@ -4,9 +4,7 @@ $if(natbib)$
 \usepackage$if(natbiboptions)$[$for(natbiboptions)$$natbiboptions$$sep$,$endfor$]$endif${natbib}
 \bibliographystyle{$if(biblio-style)$$biblio-style$$else$plainnat$endif$}
 $endif$
-$if(biblatex)$
-\usepackage$if(biblio-style)$[style=$biblio-style$]$endif${biblatex}
-$if(biblatexoptions)$\ExecuteBibliographyOptions{$for(biblatexoptions)$$biblatexoptions$$sep$,$endfor$}$endif$
+
 $for(bibliography)$
 \addbibresource{$bibliography$}
 $endfor$
@@ -166,18 +164,10 @@ $if(bibliography)$
 $if(biblio-title)$
 $if(book-class)$
 \renewcommand\bibname{$biblio-title$}
-$else$
-\renewcommand\refname{$biblio-title$}
-$endif$
 $endif$
 \bibliography{$for(bibliography)$$bibliography$$sep$,$endfor$}
 
 $endif$
-$endif$
-
-$if(biblatex)$
-\printbibliography$if(biblio-title)$[title=$biblio-title$]$endif$
-
 $endif$
 
 % 插入 after_body.tex
