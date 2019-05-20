@@ -4,7 +4,9 @@ $if(natbib)$
 \usepackage$if(natbiboptions)$[$for(natbiboptions)$$natbiboptions$$sep$,$endfor$]$endif${natbib}
 \bibliographystyle{$if(biblio-style)$$biblio-style$$else$plainnat$endif$}
 $endif$
-
+$if(biblatex)$
+\usepackage$if(biblio-style)$[style=$biblio-style$]$endif${biblatex}
+$if(biblatexoptions)$\ExecuteBibliographyOptions{$for(biblatexoptions)$$biblatexoptions$$sep$,$endfor$}$endif$
 $for(bibliography)$
 \addbibresource{$bibliography$}
 $endfor$
@@ -44,32 +46,8 @@ $endif$
 \let\rmarkdownfootnote\footnote%
 \def\footnote{\protect\rmarkdownfootnote}
 
-$if(compact-title)$
-%%% Change title format to be more compact
-\usepackage{titling}
-
-% Create subtitle command for use in maketitle
-\providecommand{\subtitle}[1]{
-  \posttitle{
-    \begin{center}\large#1\end{center}
-    }
-}
-
-\setlength{\droptitle}{-2em}
-$endif$
-
 $if(title)$
   \title{$title$}
-  $if(compact-title)$
-  \pretitle{\vspace{\droptitle}\centering\huge}
-  \posttitle{\par}
-  $endif$
-$else$
-  \title{}
-  $if(compact-title)$
-  \pretitle{\vspace{\droptitle}}
-  \posttitle{}
-  $endif$
 $endif$
 
 $if(subtitle)$
@@ -78,28 +56,10 @@ $endif$
 
 $if(author)$
   \author{$for(author)$$author$$sep$ \\ $endfor$}
-  $if(compact-title)$
-  \preauthor{\centering\large\emph}
-  \postauthor{\par}
-  $endif$
-$else$
-  \author{}
-  $if(compact-title)$
-  \preauthor{}\postauthor{}
-  $endif$
 $endif$
 
 $if(date)$
-  $if(compact-title)$
-  \predate{\centering\large\emph}
-  \postdate{\par}
-  $endif$
   \date{$date$}
-$else$
-  \date{}
-  $if(compact-title)$
-  \predate{}\postdate{}
-  $endif$
 $endif$
 
 % logo 图案
@@ -164,10 +124,18 @@ $if(bibliography)$
 $if(biblio-title)$
 $if(book-class)$
 \renewcommand\bibname{$biblio-title$}
+$else$
+\renewcommand\refname{$biblio-title$}
+$endif$
 $endif$
 \bibliography{$for(bibliography)$$bibliography$$sep$,$endfor$}
 
 $endif$
+$endif$
+
+$if(biblatex)$
+\printbibliography$if(biblio-title)$[title=$biblio-title$]$endif$
+
 $endif$
 
 % 插入 after_body.tex
