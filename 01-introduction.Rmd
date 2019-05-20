@@ -28,6 +28,8 @@
 \documentclass[color=green]{elegantbook}
 :::
 
+<!-- Table: (\#tab:color-thm) ElegantBook 模板中的颜色主题 -->
+
 <!-- \begin{table}[htbp] -->
 <!-- \caption{ElegantBook 模板中的颜色主题\label{tab:color thm}} -->
 <!-- \centering -->

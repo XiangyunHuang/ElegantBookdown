@@ -7,7 +7,6 @@ site: bookdown::bookdown_site
 documentclass: elegantbook
 bibliography: [book.bib]
 biblio-style: apalike
-toccolor: 
 logo: "figure/logo.png"
 cover: "figure/cover.jpg"
 institute: "Elegant LaTeX Program"

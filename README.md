@@ -30,9 +30,9 @@ https://bookdown.org/xiangyun/ElegantBookdown/
 - [ ] 各个 block 转自定义的 sidebar 借助 Pandoc 和 Lua 实现的 Pandoc filters
    1. Pandoc 提供的 [divs-and-spans](https://pandoc.org/MANUAL.html#divs-and-spans) [自定义block原型实现](https://github.com/yihui/bookdown-crc/issues/1#issuecomment-449198568)
 - [ ] 各个 block 的 CSS 定制，提示、警告等图标
-- [ ] 注意、警告等的定制，也是一种 block 可由 Pandoc filters 实现
-- [ ] note/lstlisting 等环境由 Pandoc filters 过滤时自动在段落首尾添加新行
-
+- [ ] 定义、定理、命题作为一类 block 需要自定义 Pandoc filters 支持，练习和例题作为一类
+- [ ] note/lstlisting 等环境由 Pandoc filters 过滤时去掉自动在段落首尾添加新行
+- [ ] 让列表环境支持 \tightlist 
 
 ### 致谢
 
