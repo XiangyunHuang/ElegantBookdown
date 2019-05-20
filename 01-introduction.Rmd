@@ -10,10 +10,10 @@
 
 本模板内含两套语言环境，改变语言环境会改变图表标题的引导词（图，表），文章结构词（比如目录，参考文献等），以及定理环境中的引导词（比如定理，引理等）。不同语言模式的启用如下：
 
-```tex
+::: lstlisting
 \documentclass[cn]{elegantbook} 
 \documentclass[lang=cn]{elegantbook}
-```
+::: 
 
 ::: remark
 不管选用中文环境（`lang=cn`）还是英文环境（`lang=en`）均可输入中文。另外如果在笔记中使用了抄录环境（`lstlisting`），并抄录代码中有中文，请务必使用 `XeLaTeX` 编译。
@@ -23,10 +23,10 @@
 
 本模板内置 5 组颜色主题，分别为 `green`^[为原先默认主题]、`cyan`、`blue`（默认）、`gray`、`black`。另外还有一个自定义的选项  `nocolor`。调用颜色主题 `green` 的方法为
 
-```tex
+::: lstlisting
 \documentclass[green]{elegantbook} %or
 \documentclass[color=green]{elegantbook}
-```
+:::
 
 <!-- \begin{table}[htbp] -->
 <!-- \caption{ElegantBook 模板中的颜色主题\label{tab:color thm}} -->
@@ -77,31 +77,31 @@
 
 如需自定义颜色集，请使用文档类选项 `nocolor` 或 `color=none`，然后在导言区定义 structure、main、second、third 四个颜色，例如：
 
-```tex
+::: lstlisting
 \definecolor{structure}{RGB}{0,0,0}
 \definecolor{main}{RGB}{70,70,70}
 \definecolor{second}{RGB}{115,45,2}
 \definecolor{third}{RGB}{0,80,80}
-```
+:::
 
 
 ## 章标题显示风格
 
 本模板内置 2 套*章标题显示风格*，包含 `hang`（默认）与 `display` 两种风格，区别在于章标题单行显示（`hang`）与双行显示（`display`），本说明使用了 `hang`。调用方式为
 
-```tex
+::: lstlisting
 \documentclass[hang]{elegantbook} %or
 \documentclass[titlestyle=hang]{elegantbook}
-```
+:::
 
 ## 数学环境简介
 
 在我们这个模板中，我们定义了两种不同的定理模式 `mode`，包括简单模式（`simple`）和炫彩模式（`fancy`），默认为 `fancy` 模式，不同模式的选择为
 
-```tex
+::: lstlisting
 \documentclass[simple]{elegantbook} %or
 \documentclass[mode=simple]{elegantbook}
-```
+:::
 
 本模板定义了四大类环境
 
@@ -122,11 +122,11 @@
 
 由于本模板使用了 `tcolorbox` 宏包来定制定理类环境，所以和普通的定理环境的使用有些许区别，定理的使用方法如下：
 
-```tex
+::: lstlisting
 \begin{theorem}{<theorem name>}{<label>}
 The content of theorem.
 \end{theorem}
-```
+:::
 
 第一个必选项 `<theorem name>` 是定理的名字，第二个必选项 `<label>` 是交叉引用时所用到的标签，交叉引用的方法为 `\ref{thm:label}`。请注意，交叉引用时必须加上前缀 `thm:`。
 
@@ -148,11 +148,11 @@ Table: (\#tab:thm-env) 定理类环境
 
 其他三种环境没有选项，可以直接使用，比如 `example` 环境的使用方法与效果：
 
-```tex
+::: lstlisting
 \begin{example}
    This is the content of example environment.
 \end{example}
-```
+::: 
 
 ::: sidebar
 This is the content of example environment.
@@ -169,10 +169,10 @@ This is the content of example environment.
 
 本模板为章节后的装饰物（base）添加了隐藏选项，有 `show` 和 `hide` 两个选项。
 
-```tex
+::: lstlisting
 \documentclass[hide]{elegantbook} %or
 \documentclass[base=hide]{elegantbook}
-```
+:::
 
 ## 封面和徽标
 
@@ -212,18 +212,18 @@ This is the content of example environment.
 
 你可以在谷歌学术，Mendeley，Endnote 中获得文献条目（bib item），然后把它们添加到 `reference.bib` 中。在文中引用的时候，引用它们的键值（bib key）即可。注意需要在编译的过程中添加 BibTeX 编译。如果你想添加未引用的文献，可以使用
 
-```tex
+::: lstlisting
 \nocite{EINAV2010,Havrylchyk2018} %or include some bibitems
 \nocite{*} %include all the bibitems
-```
+:::
 
 ## 添加序章
 
 如果你想在第一章前面添序章，不改变原本章节序号，可以在第一章内容前面使用
 
-```tex
+::: lstlisting
 \chapter*{Introduction}
 \addcontentsline{toc}{chapter}{Introduction} 
 \markboth{Introduction}{} 
 The content of introduction.
-```
+:::

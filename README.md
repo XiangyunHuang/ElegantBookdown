@@ -20,6 +20,9 @@
 
 [ElegantBook](https://github.com/ElegantLaTeX/ElegantBook) 书籍模版的 bookdown 扩展
 
+### 在线预览
+
+https://bookdown.org/xiangyun/ElegantBookdown/
 
 ### TO DO
 
@@ -28,7 +31,7 @@
    1. Pandoc 提供的 [divs-and-spans](https://pandoc.org/MANUAL.html#divs-and-spans) [自定义block原型实现](https://github.com/yihui/bookdown-crc/issues/1#issuecomment-449198568)
 - [ ] 各个 block 的 CSS 定制，提示、警告等图标
 - [ ] 注意、警告等的定制，也是一种 block 可由 Pandoc filters 实现
-
+- [ ] note/lstlisting 等环境由 Pandoc filters 过滤时自动在段落首尾添加新行
 
 
 ### 致谢

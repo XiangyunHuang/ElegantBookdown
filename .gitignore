@@ -4,6 +4,7 @@
 .Ruserdata
 .DS_Store
 
+rsconnect/
 _book/
 _bookdown_files/
 ElegantBook/

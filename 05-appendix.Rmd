@@ -8,14 +8,14 @@
 
 ## 求和算子与描述统计量
 
-**求和算子** 是用以表达多个数求和运算的一个缩略符号，它在统计学和计量经济学分析中扮演着重要作用。如果 $\{x_i: i=1, 2, \ldots, n\}$ 表示 $n$ 个数的一个序列，那么我们就把这 $n$ 个数的和写为：
+**求和算子**是用以表达多个数求和运算的一个缩略符号，它在统计学和计量经济学分析中扮演着重要作用。如果 $\{x_i: i=1, 2, \ldots, n\}$ 表示 $n$ 个数的一个序列，那么我们就把这 $n$ 个数的和写为：
 
 $$\sum_{i=1}^n x_i \equiv x_1 + x_2 +\cdots + x_n$$
 
 
 # 最小示例
 
-```tex
+::: lstlisting
 \documentclass[lang=cn,11pt]{elegantbook}
 % title info
 \title{Title}
@@ -43,6 +43,6 @@ The content of chapter one.
 \bibliography{reference}
 
 \end{document}
-```
+:::
 
 We have finished a nice book.

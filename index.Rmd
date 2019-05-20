@@ -7,6 +7,7 @@ site: bookdown::bookdown_site
 documentclass: elegantbook
 bibliography: [book.bib]
 biblio-style: apalike
+toccolor: 
 logo: "figure/logo.png"
 cover: "figure/cover.jpg"
 institute: "Elegant LaTeX Program"
@@ -45,8 +46,9 @@ Elegant LaTeX 项目组致力于打造一系列美观、优雅、简便的模板
 1. 增加简化模式；
 1. 增加 base 隐藏选项。
 
-注意
-:  由于新版本进行了重构，3.x 版本并不兼容 2.x 版本，如果你想把 2.x 版本的文件转为 3.x 版本，请查看 [跨版本转换](https://github.com/ElegantLaTeX/ElegantBook/wiki/convert)。今后不再回答关于 2.x 版本的问题。
+::: note
+由于新版本进行了重构，3.x 版本并不兼容 2.x 版本，如果你想把 2.x 版本的文件转为 3.x 版本，请查看 [跨版本转换](https://github.com/ElegantLaTeX/ElegantBook/wiki/convert)。今后不再回答关于 2.x 版本的问题。
+:::
 
 插入图 \@ref(fig:elegantbook-logo) 所示
 

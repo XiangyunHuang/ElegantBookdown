@@ -17,4 +17,32 @@ function Div(el)
       pandoc.RawBlock("latex", "\\end{shaded}")
     }
   end
+  if el.classes:includes("lstlisting") then
+    return {
+      pandoc.RawBlock("latex", "\\begin{lstlisting}"),
+      el,
+      pandoc.RawBlock("latex", "\\end{lstlisting}")
+    }
+  end
+  if el.classes:includes("note") then
+    return {
+      pandoc.RawBlock("latex", "\\begin{note}"),
+      el,
+      pandoc.RawBlock("latex", "\\end{note}")
+    }
+  end
+  if el.classes:includes("remark") then
+    return {
+      pandoc.RawBlock("latex", "\\begin{remark}"),
+      el,
+      pandoc.RawBlock("latex", "\\end{remark}")
+    }
+  end
+  if el.classes:includes("introduction") then
+    return {
+      pandoc.RawBlock("latex", "\\begin{introduction}"),
+      el,
+      pandoc.RawBlock("latex", "\\end{introduction}")
+    }
+  end
 end
