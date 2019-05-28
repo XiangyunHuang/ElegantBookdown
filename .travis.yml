@@ -46,10 +46,20 @@ before_install:
   - echo $COMMIT_MSG
   - export DEPLOY_MSG=${COMMIT_MSG//[\'\"\`]/}
   - echo $DEPLOY_MSG
-  - chmod +x ./_deploy.sh
-  
+
 before_script:
   - Rscript -e 'update.packages(lib.loc = .libPaths()[1], ask = FALSE)'
 
 script:
-  - Rscript -e 'bookdown::render_book("index.Rmd")'
+  - Rscript -e 'bookdown::render_book("index.Rmd", "all")'
+
+deploy:
+  - provider: script
+    script: netlify deploy --prod --dir _book --message "$DEPLOY_MSG"
+    skip_cleanup: true
+  - provider: pages
+    skip_cleanup: true
+    github_token: $GITHUB_TOKEN
+    on:
+      branch: master
+    local_dir: _book
