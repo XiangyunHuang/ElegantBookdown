@@ -1,7 +1,10 @@
 --- 
 title: "Elegant Bookdown Template"
 subtitle: "优雅的 Bookdown 书籍模版"
-author: "黄湘云"
+author: 
+  - Ethan Deng
+  - Liam Huang
+  - 黄湘云
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: elegantbook
@@ -10,8 +13,8 @@ biblio-style: apalike
 logo: "figure/logo.png"
 cover: "figure/cover.jpg"
 institute: "Elegant LaTeX Program"
-equote: "Victory won't come to us unless we go to it. --- M. Moore"
-version: "3.07"
+extrainfo: "Victory won't come to us unless we go to it. --- M. Moore"
+version: "3.08"
 github-repo: XiangyunHuang/ElegantBookdown
 classoption: "cn,11pt,fancy,hide"
 #indent: 40pt
