@@ -30,7 +30,7 @@ https://bookdown.org/xiangyun/ElegantBookdown/
 1. [Pandoc](https://github.com/jgm/pandoc) 版本 **2.7.2** 及以上
 1. TeXLive 2019 及以上，但是推荐 [TinyTeX](https://yihui.name/tinytex/)
 1. [R 软件](https://cran.r-project.org/) 版本推荐 **3.6.0** 及以上 
-1. R 扩展包 [bookdown](https://github.com/rstudio/bookdown) 版本 **0.10** 及以上
+1. R 扩展包 [bookdown](https://github.com/rstudio/bookdown) 版本 **0.11** 及以上
 
 ### TO DO
 

@@ -42,6 +42,9 @@ before_install:
   - curl -fLo /tmp/tinytex.tar.gz https://travis-bin.yihui.name/tinytex.tar.gz
   - tar -xzf /tmp/tinytex.tar.gz -C $HOME
   - export PATH=$HOME/.TinyTeX/bin/x86_64-linux:$PATH
+  - tlmgr repository list
+  - tlmgr repository add https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet
+  - tlmgr repository set https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet
   - tlmgr update --self --all
   - tlmgr install $(cat latex/TeXLive.pkgs | tr '\n' ' ') || true
   # CTAN mirrors
@@ -51,6 +54,7 @@ before_install:
   - echo $COMMIT_MSG
   - export DEPLOY_MSG=${COMMIT_MSG//[\'\"\`]/}
   - echo $DEPLOY_MSG
+  - chmod +x ./_deploy_error
 
 before_script:
   - Rscript -e 'update.packages(lib.loc = .libPaths()[1], ask = FALSE)'
@@ -73,5 +77,5 @@ after_failure:
   - tlmgr --version
   - tlmgr info elegantbook
   - tlmgr info --list --only-installed --data name
-  - cat ElegantBookdown.log
-  - cat ElegantBookdown.tex 
+  - ./_deploy_error
+  # 最好此时把所有文件推送到新的分支 error
