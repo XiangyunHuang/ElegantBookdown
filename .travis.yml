@@ -38,10 +38,15 @@ addons:
       - libgit2-dev
 
 before_install:
+  # TinyTeX
   - curl -fLo /tmp/tinytex.tar.gz https://travis-bin.yihui.name/tinytex.tar.gz
   - tar -xzf /tmp/tinytex.tar.gz -C $HOME
   - export PATH=$HOME/.TinyTeX/bin/x86_64-linux:$PATH
+  - tlmgr update --self --all
   - tlmgr install $(cat latex/TeXLive.pkgs | tr '\n' ' ') || true
+  # CTAN mirrors
+  #- curl -fLo elegantbook.cls https://raw.githubusercontent.com/ElegantLaTeX/ElegantBook/master/elegantbook.cls
+  # MSG
   - export COMMIT_MSG=$(git log -1 --format='%h %<(50,trunc)%s')
   - echo $COMMIT_MSG
   - export DEPLOY_MSG=${COMMIT_MSG//[\'\"\`]/}
@@ -63,3 +68,10 @@ deploy:
     on:
       branch: master
     local_dir: _book
+
+after_failure:
+  - tlmgr --version
+  - tlmgr info elegantbook
+  - tlmgr info --list --only-installed --data name
+  - cat ElegantBookdown.log
+  - cat ElegantBookdown.tex 
