@@ -188,24 +188,24 @@ This is the content of example environment.
 
 本模板借助于 `tikz` 定制了 `itemize` 和 `enumerate` 环境，其中 `itemize` 环境修改了 3 层嵌套，而 `enumerate` 环境修改了 4 层嵌套（仅改变颜色）。示例如下
 
-:::: {.columns}
-::: {.column width="50%"}
-- first item of nesti;
-- second item of nesti;
-  - first item of nestii;
-  - second item of nestii;
-     - first item of nestiii;
-     - second item of nestiii.
-:::
-::: {.column width="50%"}
-1. first item of nesti;
-1. second item of nesti;
-   1. first item of nestii;
-   1. second item of nestii;
-      1. first item of nestiii;
-      1. second item of nestiii.
-:::
-::::
+<!-- :::: {.columns} -->
+<!-- ::: {.column width="50%"} -->
+<!-- - first item of nesti; -->
+<!-- - second item of nesti; -->
+<!--   - first item of nestii; -->
+<!--   - second item of nestii; -->
+<!--      - first item of nestiii; -->
+<!--      - second item of nestiii. -->
+<!-- ::: -->
+<!-- ::: {.column width="50%"} -->
+<!-- 1. first item of nesti; -->
+<!-- 1. second item of nesti; -->
+<!--    1. first item of nestii; -->
+<!--    1. second item of nestii; -->
+<!--       1. first item of nestiii; -->
+<!--       1. second item of nestiii. -->
+<!-- ::: -->
+<!-- :::: -->
 
 
 ## 参考文献 {#ref}

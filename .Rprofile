@@ -5,7 +5,7 @@ options(bookdown.post.latex = function(x) {
   
   i2 <- which(x == "\\end{column}")
   
-  # if(length(i2) > 0){
+  if(length(i2) > 0){
     i <- seq(length(i2) / 2)
     x <- x[-(i2[2 * i - 1] + 1)] # delete newline
     
@@ -14,6 +14,6 @@ options(bookdown.post.latex = function(x) {
               replacement = "\\1minipage\\2\\3\\4", fixed = FALSE
     )
     x <- gsub("\\end{column}", "\\end{minipage}", x, fixed = TRUE)
-  # }
+  }
   x
 })

@@ -22,4 +22,4 @@ bookdown::pdf_book:
   toc_depth: 3
   template: latex/template.tex
   pandoc_args: ["--top-level-division=chapter", "--lua-filter=latex/sidebar.lua"]
-bookdown::epub_book: default
+#bookdown::epub_book: default
