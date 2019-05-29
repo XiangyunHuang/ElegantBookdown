@@ -49,6 +49,8 @@ before_install:
   #- tlmgr install $(cat latex/TeXLive.pkgs | tr '\n' ' ') || true
   # CTAN mirrors
   #- curl -fLo elegantbook.cls https://raw.githubusercontent.com/ElegantLaTeX/ElegantBook/master/elegantbook.cls
+  - nvm install stable
+  - npm install netlify-cli -g
   # MSG
   - export COMMIT_MSG=$(git log -1 --format='%h %<(50,trunc)%s')
   - echo $COMMIT_MSG
