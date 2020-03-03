@@ -22,6 +22,7 @@ filehook
 fontaxes
 gbt7714
 helvetic
+hologo
 jknapltx
 kastrup
 lastpage
@@ -33,8 +34,11 @@ manfnt
 marginnote
 mathpazo
 mdwtools
+mfware
 microtype
 ms
+multirow
+mwe
 ncntrsbk
 newtx
 parskip
