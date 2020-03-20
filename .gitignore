@@ -4,10 +4,11 @@
 .Ruserdata
 .DS_Store
 
-elegantbook.cls
+packages.bib
 
 rsconnect/
 _book/
 _bookdown_files/
-ElegantBook/
+
 ElegantBookdown.rds
+ElegantBookdown.log

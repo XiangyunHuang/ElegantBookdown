@@ -17,7 +17,7 @@ branches:
     - release
     - stable
 
-pandoc_version: 2.7.2
+pandoc_version: 2.9.2
 
 git:
   depth: 5
@@ -40,11 +40,9 @@ before_install:
   - export PATH=$HOME/.TinyTeX/bin/x86_64-linux:$PATH
   - tlmgr repository list
   - tlmgr repository add https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet
-  #- tlmgr repository set https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet
   - tlmgr update --self --all
-  - tlmgr install $(cat latex/TeXLive.pkgs | tr '\n' ' ') || true
-  # CTAN mirrors
-  #- curl -fLo elegantbook.cls https://raw.githubusercontent.com/ElegantLaTeX/ElegantBook/master/elegantbook.cls
+  - tlmgr install elegantbook
+  # netlify
   - nvm install stable
   - npm install netlify-cli -g
   # MSG

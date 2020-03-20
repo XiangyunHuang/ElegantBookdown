@@ -1,5 +1,5 @@
 bookdown::gitbook:
-  css: css/style.css
+  css: style.css
   split_by: rmd
   config:
     toc:
@@ -15,11 +15,13 @@ bookdown::gitbook:
       all: []
 bookdown::pdf_book:
   includes:
-    in_header: latex/preamble.tex
+    in_header: preamble.tex
   latex_engine: xelatex
-  citation_package: natbib
+  fig_crop: no
+  citation_package: none # elegantbook 已经设定好了
   keep_tex: yes
   toc_depth: 3
-  template: latex/template.tex
-  pandoc_args: ["--top-level-division=chapter", "--lua-filter=latex/sidebar.lua"]
+  template: null
+  pandoc_args: ["--top-level-division=chapter", "--lua-filter=sidebar.lua", "--wrap=none"]
+  quote_footer: ["\\hspace*{\\fill} ", ""]
 bookdown::epub_book: default
