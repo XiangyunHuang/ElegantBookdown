@@ -21,17 +21,6 @@
 1. [R 软件](https://cran.r-project.org/) 版本推荐 **3.6.0** 及以上 
 1. R 扩展包 [bookdown](https://github.com/rstudio/bookdown) 版本 **0.11** 及以上
 
-### TODOs
-
-- [ ] 各个 block 转自定义的 sidebar 
-   1. 借助 Pandoc 和 Lua 实现自定义的 Pandoc filters
-   1. Pandoc 提供的 [divs-and-spans](https://pandoc.org/MANUAL.html#divs-and-spans) [自定义block原型实现](https://github.com/yihui/bookdown-crc/issues/1#issuecomment-449198568)
-- [ ] 各个 block 的 CSS 定制，提示、警告等图标
-- [ ] 定义、定理、命题作为一类 block 需要自定义 Pandoc filters 支持，练习和例题作为一类
-- [ ] note/lstlisting 等环境由 Pandoc filters 过滤时去掉自动在段落首尾添加新行
-- [ ] 让列表环境支持 \tightlist
-- [ ] note 块 CSS 样式参照 [Fedora 官方文档](https://docs.fedoraproject.org/en-US/fedora/f30/install-guide)
-
 
 ### 致谢
 
