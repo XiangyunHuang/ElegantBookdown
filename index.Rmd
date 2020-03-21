@@ -56,9 +56,7 @@ summary(cars)
 xfun::session_info(c("rmarkdown", "bookdown", "knitr"), dependencies = FALSE)
 ```
 
-:::: rmdnote
-这里是注意事项
-::::
+
 
 ```{r, echo=FALSE}
 # modified from https://github.com/hadley/adv-r/blob/4915e2984168da50671491db238d351e5590c07b/Introduction.Rmd#L264
@@ -87,6 +85,72 @@ pandoc note.md -o note.html   # markdown 文本转化为 html 文档
 ```
 
 Pandoc 支持数十种文档输出格式，更多命令参数说明见 <https://pandoc.org/MANUAL.html>。可不可以不要 R，也不要 R Markdown 呢？当然可以，详见 <https://github.com/annProg/PanBook>，基于 Pandoc's Markdown 实现一次写作，多样输出！
+
+## 各类 Block {#block}
+
+```{lemma, chf-pdf}
+For any two random variables $X_1$, $X_2$, they both have the same probability distribution if and only if
+$$\varphi _{X_1}(t)=\varphi _{X_2}(t)$$
+```
+
+```{theorem, chf-sum}
+If $X_1$, ..., $X_n$ are independent random variables, and $a_1$, ..., $a_n$ are some constants, then the characteristic function of the linear combination $S_n=\sum_{i=1}^na_iX_i$ is
+$$\varphi _{S_{n}}(t)=\prod_{i=1}^n\varphi _{X_i}(a_{i}t)=\varphi _{X_{1}}(a_{1}t)\cdots \varphi _{X_{n}}(a_{n}t)$$
+```
+
+```{proposition}
+The distribution of the sum of independent Poisson random variables $X_i \sim \mathrm{Pois}(\lambda_i),\: i=1,2,\cdots,n$ is $\mathrm{Pois}(\sum_{i=1}^n\lambda_i)$.
+```
+
+
+```{proof}
+The characteristic function of $X\sim\mathrm{Pois}(\lambda)$ is $\varphi _{X}(t)=e^{\lambda (e^{it}-1)}$. Let $P_n=\sum_{i=1}^nX_i$. We know from Theorem \@ref(thm:chf-sum) that
+\begin{equation*}
+\begin{split}
+\varphi _{P_{n}}(t) & =\prod_{i=1}^n\varphi _{X_i}(t) \\
+& =\prod_{i=1}^n e^{\lambda_i (e^{it}-1)} \\
+& = e^{\sum_{i=1}^n \lambda_i (e^{it}-1)}
+\end{split}
+\end{equation*}
+This is the characteristic function of a Poisson random variable with the parameter $\lambda=\sum_{i=1}^n \lambda_i$. From Lemma \@ref(lem:chf-pdf), we know the distribution of $P_n$ is $\mathrm{Pois}(\sum_{i=1}^n\lambda_i)$.
+```
+
+```{remark}
+In some cases, it is very convenient and easy to figure out the distribution of the sum of independent random variables using characteristic functions.
+```
+
+
+```{corollary}
+The characteristic function of the sum of two independent random variables $X_1$ and $X_2$ is the product of characteristic functions of $X_1$ and $X_2$, i.e.,
+$$\varphi _{X_1+X_2}(t)=\varphi _{X_1}(t) \varphi _{X_2}(t)$$
+```
+
+```{exercise, name="Characteristic Function of the Sample Mean"}
+Let $\bar{X}=\sum_{i=1}^n \frac{1}{n} X_i$ be the sample mean of $n$ independent and identically distributed random variables, each with characteristic function $\varphi _{X}$. Compute the characteristic function of $\bar{X}$. 
+```
+
+```{solution}
+Applying Theorem \@ref(thm:chf-sum), we have
+$$\varphi _{\bar{X}}(t)=\prod_{i=1}^n \varphi _{X_i}\left(\frac{t}{n}\right)=\left[\varphi _{X}\left(\frac{t}{n}\right)\right]^n.$$
+```
+
+[要做的还有很多]{.todo}
+
+::: rmdwarn
+这是警告
+:::
+
+::: rmdtip
+这是提示
+:::
+
+:::: rmdnote
+这是注意
+::::
+
+::: sidebar
+普通说明
+:::
 
 ```{r include=FALSE,cache=FALSE}
 # automatically create a bib database for R packages

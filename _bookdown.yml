@@ -11,6 +11,9 @@ language:
     def: "定义 "
     exm: "例 "
     exr: "练习 "
+    proof: "证明 "
+    remark: "注 "
+    solution: "解 "
   ui:
     edit: "编辑"
     chapter_name: ["第 ", " 章"]
