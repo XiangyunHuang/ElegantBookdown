@@ -3,11 +3,6 @@
 ---
 
 
-### 目标
-
-1. [ElegantBook](https://github.com/ElegantLaTeX/ElegantBook) 书籍模版的 bookdown 扩展
-1. 定制一套 Gitbook 的 CSS 样式
-
 ### 在线预览
 
 - https://bookdown.org/xiangyun/ElegantBookdown/ (stable)
