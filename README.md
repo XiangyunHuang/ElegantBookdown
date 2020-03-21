@@ -38,3 +38,7 @@
 1. 项目 [ElegantBook](https://github.com/ElegantLaTeX/ElegantBook) 的开发者 [Ethan Deng 邓东升](https://ddswhu.me/) 和 [Liam Huang 黄晨成](https://liam.page/)
 1. 项目 [bookdown](https://github.com/rstudio/bookdown) 的开发者 [Yihui Xie 谢益辉](https://yihui.name/)
 1. 项目 [Pandoc](https://github.com/jgm/pandoc) 的开发者 [John MacFarlane](https://johnmacfarlane.net/)
+
+### 相关项目
+
+- [Fei Ye](https://github.com/fyemath/) 的 [elegantbookdown-demo](https://elegantbookdown-example.netlify.com/) 迁移了英文版 [ElegantBook](https://github.com/ElegantLaTeX/ElegantBook) 到 bookdown 书籍环境
