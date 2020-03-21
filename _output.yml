@@ -24,4 +24,10 @@ bookdown::pdf_book:
   template: null
   pandoc_args: ["--top-level-division=chapter", "--lua-filter=sidebar.lua", "--wrap=none"]
   quote_footer: ["\\hspace*{\\fill} ", ""]
+  extra_dependencies:
+    subfig:
+     - lotdepth=2
+     - lofdepth=2
+    sourcecodepro:
+     - scale=0.85
 bookdown::epub_book: default

@@ -39,13 +39,14 @@ before_install:
   - tar -xzf /tmp/tinytex.tar.gz -C $HOME
   - export PATH=$HOME/.TinyTeX/bin/x86_64-linux:$PATH
   - tlmgr repository list
-  - tlmgr repository add https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet
+  #- tlmgr repository add https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet
+  - tlmgr option repository https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet
   - tlmgr update --self --all
   - tlmgr install elegantbook comment ctex ttfutils ms xecjk ulem zhnumber
       fandol kastrup newtx fontaxes anyfontsize esint xcolor enumitem jknapltx 
       multirow makecell lipsum setspace gbt7714 xpatch pgf pgfornament pgfopts 
       titlesec apptools appendix psnfss symbol manfnt bbding tcolorbox environ trimspaces
-      adforn fancyhdr lastpage footmisc rsfs tex-gyre txfonts boondox
+      adforn fancyhdr lastpage footmisc rsfs tex-gyre txfonts boondox sourcecodepro
   # netlify
   - nvm install stable
   - npm install netlify-cli -g
