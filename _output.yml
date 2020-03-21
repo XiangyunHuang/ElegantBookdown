@@ -13,6 +13,8 @@ bookdown::gitbook:
       facebook: no
       twitter: no
       all: []
+  includes:
+    in_header: header.html
 bookdown::pdf_book:
   includes:
     in_header: preamble.tex
@@ -22,6 +24,7 @@ bookdown::pdf_book:
   keep_tex: yes
   toc_depth: 3
   template: null
+  dev: "cairo_pdf"
   pandoc_args: ["--top-level-division=chapter", "--lua-filter=sidebar.lua", "--wrap=none"]
   quote_footer: ["\\hspace*{\\fill} ", ""]
   extra_dependencies:

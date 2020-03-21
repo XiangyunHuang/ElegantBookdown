@@ -13,6 +13,7 @@ lot: yes
 lof: yes
 colorlinks: yes
 link-citations: yes
+mathspec: yes
 github-repo: XiangyunHuang/ElegantBookdown
 classoption: "cn,11pt,chinese,bibstyle=apalike"
 description: "This is a bookdown template based on ElegantBook. The output format for this template is bookdown::gitbook and bookdown::pdf_book."
@@ -30,7 +31,7 @@ source('_common.R')
 > 
 > --- John Gruber
 
-这是一份 R Markodwn 文档。 Markdown 提供一种简洁的格式语法，支持数学公式 $\alpha$ 和 $\beta$，用来生成 HTML、PDF 和 MS Word 文档。
+这是一份 R Markodwn 文档。 Markdown 提供一种简洁的格式语法，支持数学公式 $\bm{\alpha}$（粗体）和 $\alpha$ （正常），用来生成 HTML、PDF 和 MS Word 文档。
 
 当你点击 **Knit** 按钮时，就会生成一份包含正文和代码执行结果的文档。你可以像这样嵌入 R 代码块：
 
