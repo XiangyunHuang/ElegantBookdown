@@ -42,11 +42,11 @@ before_install:
   #- tlmgr repository add https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet
   - tlmgr option repository https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet
   - tlmgr update --self --all
-  - tlmgr install elegantbook comment ctex ttfutils ms xecjk ulem zhnumber
-      fandol kastrup newtx fontaxes anyfontsize esint xcolor enumitem jknapltx 
-      multirow makecell lipsum setspace gbt7714 xpatch pgf pgfornament pgfopts 
+  - tlmgr install elegantbook comment ctex ttfutils ms xecjk ulem zhnumber listings
+      fandol kastrup newtx fontaxes anyfontsize esint xcolor enumitem jknapltx mdwtools
+      multirow makecell lipsum setspace gbt7714 xpatch pgf pgfornament pgfopts mwe hologo
       titlesec apptools appendix psnfss symbol manfnt bbding tcolorbox environ trimspaces
-      adforn fancyhdr lastpage footmisc rsfs tex-gyre txfonts boondox sourcecodepro
+      adforn fancyhdr lastpage footmisc rsfs tex-gyre txfonts boondox sourcecodepro subfig
   # netlify
   - nvm install stable
   - npm install netlify-cli -g
