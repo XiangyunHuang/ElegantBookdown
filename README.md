@@ -3,14 +3,16 @@
 ---
 
 
-### Target
+### 目标
 
 1. [ElegantBook](https://github.com/ElegantLaTeX/ElegantBook) 书籍模版的 bookdown 扩展
 1. 定制一套 Gitbook 的 CSS 样式
 
 ### 在线预览
 
-https://bookdown.org/xiangyun/ElegantBookdown/
+- https://bookdown.org/xiangyun/ElegantBookdown/ (stable)
+- https://xiangyunhuang.github.io/ElegantBookdown/ (latest) 经验表明比较适合国内访问
+- https://elegantbookdown.netlify.com/ (unstable)
 
 ### 使用环境
 
@@ -19,7 +21,7 @@ https://bookdown.org/xiangyun/ElegantBookdown/
 1. [R 软件](https://cran.r-project.org/) 版本推荐 **3.6.0** 及以上 
 1. R 扩展包 [bookdown](https://github.com/rstudio/bookdown) 版本 **0.11** 及以上
 
-### TO DO
+### TODOs
 
 - [ ] 各个 block 转自定义的 sidebar 
    1. 借助 Pandoc 和 Lua 实现自定义的 Pandoc filters
