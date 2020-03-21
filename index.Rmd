@@ -12,11 +12,22 @@ bibliography:
 lot: yes
 lof: yes
 colorlinks: yes
+toccolor: Maroon
 link-citations: yes
 mathspec: yes
+subject: "基于 elegantbook 文类的 bookdown 模版"
+keywords:
+  - elegantbook
+  - bookdown
+  - pandoc
+  - R
+hyperrefoptions:
+- linktoc=all
+- pdfwindowui
+- pdfpagemode=FullScreen
 github-repo: XiangyunHuang/ElegantBookdown
 classoption: "cn,11pt,chinese,bibstyle=apalike"
-description: "This is a bookdown template based on ElegantBook. The output format for this template is bookdown::gitbook and bookdown::pdf_book."
+description: "最初看到 elegantbook 做的书籍样式很漂亮，就想把它引入到 bookdown 中，遂定制了此模版。在此基础上，做了迁移和扩展的工作，融合了 LaTeX (精美)、Pandoc (简洁) 和 R (强大) 的特性。This is a bookdown template based on ElegantBook. The output format for this template is bookdown::gitbook and bookdown::pdf_book."
 ---
 
 \mainmatter
@@ -45,6 +56,9 @@ summary(cars)
 xfun::session_info(c("rmarkdown", "bookdown", "knitr"), dependencies = FALSE)
 ```
 
+:::: rmdnote
+这里是注意事项
+::::
 
 ```{r, echo=FALSE}
 # modified from https://github.com/hadley/adv-r/blob/4915e2984168da50671491db238d351e5590c07b/Introduction.Rmd#L264
@@ -61,6 +75,18 @@ ruler <- function(width = getOption("width")) {
 ruler()
 ```
 
+## Pandoc 
+
+Pandoc 自诞生以来已历 15 个春秋，Github 星级 18.5k，而日常使用的 Hive 不过区区 3k。Pandoc 现已被各大 Linux 发行版（如 CentOS/Ubuntu 等）收录。下面给出一个使用 Pandoc 的简单例子
+
+```bash
+echo "hello, world!" > note.md
+pandoc note.md -s -o note.tex # markdown 文本转化为 tex 文本
+pandoc note.md -o note.pdf    # markdown 文本转化为 pdf 文档
+pandoc note.md -o note.html   # markdown 文本转化为 html 文档
+```
+
+Pandoc 支持数十种文档输出格式，更多命令参数说明见 <https://pandoc.org/MANUAL.html>。可不可以不要 R，也不要 R Markdown 呢？当然可以，详见 <https://github.com/annProg/PanBook>，基于 Pandoc's Markdown 实现一次写作，多样输出！
 
 ```{r include=FALSE,cache=FALSE}
 # automatically create a bib database for R packages

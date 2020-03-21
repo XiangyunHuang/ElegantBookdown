@@ -17,32 +17,25 @@ function Div(el)
       pandoc.RawBlock("latex", "\\end{shaded}")
     }
   end
-  if el.classes:includes("lstlisting") then
+  if el.classes:includes("rmdwarn") then
     return {
-      pandoc.RawBlock("latex", "\\begin{lstlisting}"),
+      pandoc.RawBlock("latex", "\\begin{shaded}\\textcolor[RGB]{234,67,53}{\\textbf{警告}}"),
       el,
-      pandoc.RawBlock("latex", "\\end{lstlisting}")
+      pandoc.RawBlock("latex", "\\end{shaded}")
     }
   end
-  if el.classes:includes("note") then
+  if el.classes:includes("rmdnote") then
     return {
-      pandoc.RawBlock("latex", "\\begin{note}"),
+      pandoc.RawBlock("latex", "\\begin{shaded}\\textcolor[RGB]{251,188,5}{\\textbf{注意}}"),
       el,
-      pandoc.RawBlock("latex", "\\end{note}")
+      pandoc.RawBlock("latex", "\\end{shaded}")
     }
   end
-  if el.classes:includes("remark") then
+  if el.classes:includes("rmdtip") then
     return {
-      pandoc.RawBlock("latex", "\\begin{remark}"),
+      pandoc.RawBlock("latex", "\\begin{shaded}\\textcolor[RGB]{52,168,83}{\\textbf{提示}}"),
       el,
-      pandoc.RawBlock("latex", "\\end{remark}")
-    }
-  end
-  if el.classes:includes("introduction") then
-    return {
-      pandoc.RawBlock("latex", "\\begin{introduction}"),
-      el,
-      pandoc.RawBlock("latex", "\\end{introduction}")
+      pandoc.RawBlock("latex", "\\end{shaded}")
     }
   end
 end
