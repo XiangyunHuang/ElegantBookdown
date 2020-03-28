@@ -49,6 +49,10 @@ before_install:
   # netlify
   - nvm install stable
   - npm install netlify-cli -g
+  ## install fonts
+  - curl -fLo Adobe-Fonts.zip https://github.com/XiangyunHuang/fonts/releases/download/v0.1/Adobe-Fonts.zip
+  - unzip Adobe-Fonts.zip -d ~/.fonts/adobe
+  - fc-cache -fsv
   # MSG
   - export COMMIT_MSG=$(git log -1 --format='%h %<(50,trunc)%s')
   - echo $COMMIT_MSG

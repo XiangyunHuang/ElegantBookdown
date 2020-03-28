@@ -1,7 +1,22 @@
-\institute{Elegant\LaTeX{} Program}
-\version{3.10} % 当前使用的 elegantbook 宏包版本
+\institute{A bookdown wrapper for ElegantBook}
+\version{ElegantBook 3.10} % 当前使用的 elegantbook 宏包版本
 \bioinfo{自定义}{信息}
 \extrainfo{Victory won\rq t come to us unless we go to it. --- M. Moore}
+
+% 字体设置
+\setCJKmainfont[BoldFont={Adobe Heiti Std},ItalicFont={Adobe Kaiti Std}]{Adobe Song Std} 
+\setCJKsansfont[BoldFont={Adobe Heiti Std},ItalicFont={Adobe Heiti Std}]{Adobe Heiti Std} 
+\setCJKmonofont[BoldFont={Adobe Heiti Std},ItalicFont={Adobe Heiti Std}]{Adobe Fangsong Std} 
+
+\setCJKfamilyfont{zhsong}{Adobe Song Std}
+\setCJKfamilyfont{zhhei}{Adobe Heiti Std} 
+\setCJKfamilyfont{zhkai}{Adobe Kaiti Std} 
+\setCJKfamilyfont{zhfs}{Adobe Fangsong Std}
+
+\newcommand*{\songti}{\CJKfamily{zhsong}} 
+\newcommand*{\heiti}{\CJKfamily{zhhei}} 
+\newcommand*{\kaishu}{\CJKfamily{zhkai}} 
+\newcommand*{\fangsong}{\CJKfamily{zhfs}}
 
 % 下面如果不注释就准备好 Logo 和封面图片
 % \logo{logo-blue.png} % 图片尺寸 1:1
