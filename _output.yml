@@ -8,6 +8,12 @@ bookdown::gitbook:
       after: |
         <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
     download: ["pdf", "epub"]
+    edit:
+      link: https://github.com/XiangyunHuang/masr/edit/master/%s
+      text: "编辑"
+    view:
+      link: https://github.com/XiangyunHuang/masr/blob/master/%s
+      text: "查看"
     sharing:
       github: yes
       facebook: no
@@ -33,4 +39,9 @@ bookdown::pdf_book:
      - lofdepth=2
     sourcecodepro:
      - scale=0.85
-bookdown::epub_book: default
+bookdown::epub_book: 
+  template: "default"
+  epub_version: "epub3"
+  stylesheet: style.css
+  dev: "png"
+#  pandoc_args: ['--lua-filter=sidebar.lua'] # 虚位以待类似 cancel.js 的东西支持额外的数学库 https://stackoverflow.com/questions/57548218
