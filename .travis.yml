@@ -14,8 +14,7 @@ latex: false
 branches:
   only:
     - master
-    - release
-    - stable
+    - devel
 
 pandoc_version: 2.9.2
 
