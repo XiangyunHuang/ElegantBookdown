@@ -15,6 +15,7 @@ summary(cars)
 You can also embed plots, for example:
 
 ```{r nice-fig-02, fig.cap='Here is another nice figure!', out.width='80%', fig.asp=.75, fig.align='center'}
+par(mar = c(4, 4, .1, .1))
 plot(pressure)
 ```
 
