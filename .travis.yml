@@ -75,7 +75,9 @@ deploy:
     skip_cleanup: true
     github_token: $GITHUB_TOKEN
     on:
-      branch: master
+      branch: 
+        - master
+        - devel
     local_dir: _book
 
 after_failure:

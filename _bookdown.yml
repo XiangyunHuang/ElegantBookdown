@@ -27,4 +27,5 @@ rmd_files:
   - "03-method.Rmd"
   - "04-application.Rmd"
   - "05-summary.Rmd"
+  - "07-appendix.Rmd"
   - "06-references.Rmd"
