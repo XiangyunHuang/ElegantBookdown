@@ -182,6 +182,10 @@ $$\varphi _{\bar{X}}(t)=\prod_{i=1}^n \varphi _{X_i}\left(\frac{t}{n}\right)=\le
 
 ## 自定义 block {#custom-block}
 
+[^custom-block]: 截止 `r format(Sys.time(), '%d %B, %Y')` 该书尚未出版，自定义 block 的章节见 <https://bookdown.org/yihui/rmarkdown-cookbook/custom-blocks.html>
+
+基于 Pandoc 自定义 block 是一件很有意思的事情，目前不想让模版过于复杂，仅给出几个最常用的例子。如何自定义可以去看谢益辉的新书 [R Markdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/) [^custom-block]
+
 [要做的还有很多]{.todo}
 
 ::: rmdwarn
