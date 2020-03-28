@@ -14,6 +14,7 @@ lof: yes
 colorlinks: yes
 toccolor: Maroon
 link-citations: yes
+nocite: '@*'
 mathspec: yes
 subject: "基于 elegantbook 文类的 bookdown 模版"
 keywords:
