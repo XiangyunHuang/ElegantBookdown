@@ -2,7 +2,7 @@
 title: "Elegant Bookdown Template"
 subtitle: "优雅的 Bookdown 书籍模版"
 author: 
-  - 黄湘云
+  - 黄湘云 \& 叶 飞
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: elegantbook
