@@ -46,6 +46,7 @@ before_install:
       multirow makecell lipsum setspace gbt7714 xpatch pgf pgfornament pgfopts mwe hologo
       titlesec apptools appendix psnfss symbol manfnt bbding tcolorbox environ trimspaces
       adforn fancyhdr lastpage footmisc rsfs tex-gyre txfonts boondox sourcecodepro subfig
+      adjustbox
   # netlify
   - nvm install stable
   - npm install netlify-cli -g
