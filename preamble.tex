@@ -25,4 +25,15 @@
 % Cancel common factors in Math 
 \usepackage[makeroom]{cancel}
 
+\usepackage[export]{adjustbox} %Needed for max width
+\usepackage{etoolbox} %Needed for \pathcmd
+%\patchcmd{<command>}{<code to replace>}{<code>}{<success>}{<failure>}
+%The following codes add max dimension option to includegraphics
+%Gin@ii is from graphicx package and looks for a second optional argument
+\expandafter\patchcmd\csname Gin@ii\endcsname 
+{\setkeys{Gin}{#1}}
+{\setkeys{Gin}{max width=\textwidth, max height=.5\textwidth,keepaspectratio,#1}}
+{}
+{}
+
 \frontmatter
