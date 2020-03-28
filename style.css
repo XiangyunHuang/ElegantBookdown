@@ -17,35 +17,27 @@ pre code {
 
 .sidebar {
   border: 1px solid #ccc;
-  border-left-width: 5px;
-  border-radius: 5px;
-  padding: 1em;
-  margin: 1em 0;
 }
 
 .rmdwarn {
   border: 1px solid #EA4335;
-  border-left-width: 5px;
-  border-radius: 5px;
-  padding: 1em;
-  margin: 1em 0;
 }
 
 .rmdnote {
   border: 1px solid #FBBC05;
+}
+
+.rmdtip {
+  border: 1px solid #34A853;
+}
+
+.sidebar, .rmdwarn, .rmdnote, .rmdtip {
   border-left-width: 5px;
   border-radius: 5px;
   padding: 1em;
   margin: 1em 0;
 }
 
-.rmdtip {
-  border: 1px solid #34A853;
-  border-left-width: 5px;
-  border-radius: 5px;
-  padding: 1em;
-  margin: 1em 0;
-}
 .book .book-body .page-wrapper .page-inner section.normal div.rmdwarn > :first-child,
 .book .book-body .page-wrapper .page-inner section.normal div.rmdnote > :first-child,
 .book .book-body .page-wrapper .page-inner section.normal div.rmdtip > :first-child,
