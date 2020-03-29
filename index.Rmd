@@ -38,8 +38,8 @@ description: "最初看到 elegantbook 做的书籍样式很漂亮，就想把�
 identifier:                       # epub
   - scheme: DOI
     text: doi:xxx
-publisher: XiangyunHuang         # epub
-rights: © 2019-2020 Xiangyun Huang, CC BY-4.0   # epub
+publisher: xx 出版社      # epub
+rights: © 2019-2020 黄湘云 \& 叶飞, CC BY-4.0   # epub
 # cover-image: cover.png    # epub
 ---
 
@@ -63,13 +63,26 @@ source('_common.R')
 summary(cars)
 ```
 
+
+
+## 如何参与改进 {#pr}
+
+改进原则
+
+1. 不要引入新的 LaTeX 宏包，在我看来，上游 [ElegantBook](https://github.com/ElegantLaTeX/ElegantBook) 使用的宏包已经足够多了，详见 <https://d.cosx.org/d/421349-latex/2>
+2. 书籍风格尽可能简洁，本人信奉 simple is better
+3. 不要自定义 Pandoc's LaTeX 模版，Pandoc 内建的模版已经功能很全面了，下游的 R Markdown 生态已经甩掉了自己造的大量 LaTeX 模版。为保持与下游的完美兼容，也为了更加轻量地输出多种文档格式，尽可能多种输出格式的风格一致。
+4. 本书输出格式目标是 PDF/HTML/EPUB，可以推动上游优化 Pandoc 模版或者 [ElegantBook](https://github.com/ElegantLaTeX/ElegantBook) 模版
+
+
+
 ## 运行环境 {#session-info}
 
 ```{r}
 xfun::session_info(c("rmarkdown", "bookdown", "knitr"), dependencies = FALSE)
 ```
 
-
+文武线
 
 ```{r, echo=FALSE}
 # modified from https://github.com/hadley/adv-r/blob/4915e2984168da50671491db238d351e5590c07b/Introduction.Rmd#L264
