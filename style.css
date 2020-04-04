@@ -38,13 +38,6 @@ pre code {
   margin: 1em 0;
 }
 
-.book .book-body .page-wrapper .page-inner section.normal div.rmdwarn > :first-child,
-.book .book-body .page-wrapper .page-inner section.normal div.rmdnote > :first-child,
-.book .book-body .page-wrapper .page-inner section.normal div.rmdtip > :first-child,
-.book .book-body .page-wrapper .page-inner section.normal div.sidebar > :first-child {
-  margin-top: 0;
-}
-
 .book .book-body .page-wrapper .page-inner section.normal div.rmdwarn > :last-child,
 .book .book-body .page-wrapper .page-inner section.normal div.rmdnote > :last-child,
 .book .book-body .page-wrapper .page-inner section.normal div.rmdtip > :last-child,
@@ -52,31 +45,26 @@ pre code {
   margin-bottom: 0;
 }
 
-div.rmdwarn::before {
+div.rmdwarn::before, div.rmdnote::before, div.rmdtip::before {
   display: block;
-  content: "警告";
-  color: #EA4335;
   font-size: 1.1em;
   font-weight: bold;
   margin-bottom: 0.25em;
+}
+
+div.rmdwarn::before {
+  content: "警告";
+  color: #EA4335;
 }
 
 div.rmdnote::before {
-  display: block;
   content: "注意";
   color: #FBBC05;
-  font-size: 1.1em;
-  font-weight: bold;
-  margin-bottom: 0.25em;
 }
 
 div.rmdtip::before {
-  display: block;
   content: "提示";
   color: #34A853;
-  font-size: 1.1em;
-  font-weight: bold;
-  margin-bottom: 0.25em;
 }
 
 .todo {
