@@ -18,7 +18,7 @@
 
 > 2020-03-21 更新
 >
-> 当前在 Travis CI 的测试环境 Pandoc 2.9.2、 TinyTeX 2019、 R 3.6.2、 bookdown 0.18、ElegantBook 3.10。本书籍模版对软件的依赖很轻，开发已进入稳定阶段。
+> 当前在 Travis CI 的测试环境 Pandoc 2.9.2、 TinyTeX 2020、 R 3.6.2、 bookdown 0.18、ElegantBook 3.11。本书籍模版对软件的依赖很轻，开发已进入稳定阶段。
 
 ### 如何使用
 
