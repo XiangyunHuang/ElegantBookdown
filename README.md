@@ -2,23 +2,20 @@
 
 ---
 
+### 项目源起
+
+几年前看到 [ElegantBook](https://github.com/ElegantLaTeX/ElegantBook) 制作的书籍颜值很高，就想把它 bookdown 化，如今终于如愿了！
 
 ### 在线预览
 
 - https://bookdown.org/xiangyun/ElegantBookdown/ (stable)
-- https://xiangyunhuang.github.io/ElegantBookdown/ (latest) 经验表明比较适合国内访问
-- https://elegantbookdown.netlify.com/ (unstable)
+- https://xiangyunhuang.github.io/ElegantBookdown/ (latest) 
 
 ### 使用环境
 
-1. [Pandoc](https://github.com/jgm/pandoc) 版本 **2.7.2** 及以上
-1. TeXLive 2019 及以上，但是推荐 [TinyTeX](https://yihui.name/tinytex/)
-1. [R 软件](https://cran.r-project.org/) 版本推荐 **3.6.0** 及以上 
-1. R 扩展包 [bookdown](https://github.com/rstudio/bookdown) 版本 **0.11** 及以上
-
-> 2020-03-21 更新
->
-> 当前在 Travis CI 的测试环境 Pandoc 2.9.2、 TinyTeX 2020、 R 3.6.2、 bookdown 0.18、ElegantBook 3.11。本书籍模版对软件的依赖很轻，开发已进入稳定阶段。
+1. [Pandoc](https://github.com/jgm/pandoc) 推荐 **2.9.2**
+1. [TinyTeX](https://yihui.name/tinytex/) 推荐最新版
+1. [R 软件](https://cran.r-project.org/) 和扩展包 [bookdown](https://github.com/rstudio/bookdown) 推荐最新版
 
 ### 如何使用
 
