@@ -136,7 +136,7 @@ A function is a linear function if its graph is a line.
 Let $f$ be a function defined in an interval containing $a$. We say that $f$ is continuous at $a$ if $\lim\limits_{x\to a} f(x)=f(a)$.
 :::
 
-:::{.thm}
+:::{.thm name="(重要定理)"}
 If $X_1$, ..., $X_n$ are independent random variables, and $a_1$, ..., $a_n$ are some constants, then the characteristic function of the linear combination $S_n=\sum_{i=1}^na_iX_i$ is
 $$\varphi _{S_{n}}(t)=\prod_{i=1}^n\varphi _{X_i}(a_{i}t)=\varphi _{X_{1}}(a_{1}t)\cdots \varphi _{X_{n}}(a_{n}t)$$
 :::
@@ -166,7 +166,7 @@ The characteristic function of the sum of two independent random variables $X_1$
 $$\varphi _{X_1+X_2}(t)=\varphi _{X_1}(t) \varphi _{X_2}(t)$$
 :::
 
-:::{.exer}
+:::{.exer name="Characteristic Function of the Sample Mean"}
 Let $\bar{X}=\sum_{i=1}^n \frac{1}{n} X_i$ be the sample mean of $n$ independent and identically distributed random variables, each with characteristic function $\varphi _{X}$. Compute the characteristic function of $\bar{X}$.
 :::
 
@@ -186,7 +186,6 @@ $$\varphi _{S_{n}}(t)=\prod_{i=1}^n\varphi _{X_i}(a_{i}t)=\varphi _{X_{1}}(a_{1}
 The distribution of the sum of independent Poisson random variables $X_i \sim \mathrm{Pois}(\lambda_i),\: i=1,2,\cdots,n$ is $\mathrm{Pois}(\sum_{i=1}^n\lambda_i)$.
 ```
 
-
 ```{proof}
 The characteristic function of $X\sim\mathrm{Pois}(\lambda)$ is $\varphi _{X}(t)=e^{\lambda (e^{it}-1)}$. Let $P_n=\sum_{i=1}^nX_i$. We know from Theorem \@ref(thm:chf-sum) that
 \begin{equation*}
@@ -203,14 +202,13 @@ This is the characteristic function of a Poisson random variable with the parame
 In some cases, it is very convenient and easy to figure out the distribution of the sum of independent random variables using characteristic functions.
 ```
 
-
 ```{corollary}
 The characteristic function of the sum of two independent random variables $X_1$ and $X_2$ is the product of characteristic functions of $X_1$ and $X_2$, i.e.,
 $$\varphi _{X_1+X_2}(t)=\varphi _{X_1}(t) \varphi _{X_2}(t)$$
 ```
 
 ```{exercise, name="Characteristic Function of the Sample Mean"}
-Let $\bar{X}=\sum_{i=1}^n \frac{1}{n} X_i$ be the sample mean of $n$ independent and identically distributed random variables, each with characteristic function $\varphi _{X}$. Compute the characteristic function of $\bar{X}$. 
+Let $\bar{X}=\sum_{i=1}^n \frac{1}{n} X_i$ be the sample mean of $n$ independent and identically distributed random variables, each with characteristic function $\varphi _{X}$. Compute the characteristic function of $\bar{X}$.
 ```
 
 ```{solution}
