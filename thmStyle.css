@@ -1,0 +1,203 @@
+body {
+    counter-reset: chapter 1;
+    counter-reset: section 1;
+    counter-reset: thmnum 0;
+    counter-reset: defnum 0;
+    counter-reset: exmnum 0;
+    counter-reset: exrnum 0;
+}
+
+div.section.level1 {
+    counter-increment: chapter;
+}
+
+div.section.level2 {
+    counter-increment: section;
+}
+
+.thm, .lem, .cor {
+    display: block;
+    border: 1px solid rgb(255,134,24);
+    background-color: rgba(255,134,24,0.05);
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    margin-bottom: 1em;
+    margin-top: 2em;
+    padding: 0 7px;
+    counter-increment: thmnum;
+}
+
+.prop {
+    margin-top: 2em;
+    display: block;
+    border: 1px solid rgb(0,174,247);
+    background-color: rgba(0,174,247,0.05) ;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    margin-bottom: 1em;
+    margin-top: 2em;
+    padding: 0 7px;
+    counter-increment: thmnum;
+}
+
+.defn {
+    display: block;
+    border: 1px solid rgb(0,166,82);
+    background-color: rgba(0,166,82, 0.05);
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    margin-bottom: 1em;
+    margin-top: 2em;
+    padding: 0 7px;
+    counter-increment: defnum;
+}
+
+.exam, .exer {
+    margin-top: 2em;
+    display: block;
+    border: 1px solid rgba(0,166,82,0.8);
+    /* background-color: rgb(175,153,8); */
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    margin-bottom: 1em;
+    margin-top: 2em;
+    padding: 0 7px;
+}
+
+
+.exam {
+    counter-increment: exmnum;
+}
+
+.exer {
+    counter-increment: exrnum;
+}
+
+.thm:before {
+    display: block;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    content: "定理 " counter(chapter)"."counter(section)"."counter(thmnum);
+    float: left;
+    border: 1px solid rgb(255,134,24);
+    background: rgb(255,134,24);
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    margin-left: 1em;
+    margin-top: -1em;
+    padding: 0 7px;
+}
+
+.thm>p:first-child {
+    clear: both;
+}
+
+.defn:before {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    content: "定义 " counter(chapter)"."counter(section)"."counter(defnum);
+    float: left;
+    border: 1px solid rgb(0,166,82);
+    background: rgb(0,166,82);
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    margin-left: 1em;
+    margin-top: -1em;
+    padding: 0 7px;
+}
+
+.defn>p:first-child {
+    clear: both;
+}
+
+.lem:before {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    content: "引理 " counter(chapter)"."counter(section)"."counter(thmnum);
+    float: left;
+    border: 1px solid rgb(255,134,24);
+    background: rgb(255,134,24);
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    margin-left: 1em;
+    margin-top: -1em;
+    padding: 0 7px;
+}
+
+.lem>p:first-child {
+    clear: both;
+}
+    
+.cor:before {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    content: "推论 " counter(chapter)"."counter(section)"."counter(thmnum);
+    float: left;
+    border: 1px solid rgb(255,134,24);
+    background: rgb(255,134,24);
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    margin-left: 1em;
+    margin-top: -1em;
+    padding: 0 7px;
+}
+
+.cor>p:first-child {
+    clear: both;
+}
+
+.prop:before {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    content: "命题 " counter(chapter)"."counter(section)"."counter(thmnum);
+    float: left;
+    border: 1px solid rgb(0,174,247);
+    background: rgb(0,174,247);
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    margin-left: 1em;
+    margin-top: -1em;
+    padding: 0 7px;
+}
+
+.prop>p:first-child {
+    clear: both;
+}
+    
+.exam:before {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    content: "例题 " counter(chapter)"."counter(section)"."counter(exmnum);
+    float: left;
+    padding-right:1em;
+}
+
+.exer:before {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    content: "习题 " counter(chapter)"."counter(section)"."counter(exrnum);
+    float: left;
+    padding-right:1em;
+}
+
+.pf::before {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    content: "证明";
+    float: left;
+    padding-right:1em;
+}
+
+.pf>p:last-child::after {
+    float: right;
+    content: "\25A2";
+}
