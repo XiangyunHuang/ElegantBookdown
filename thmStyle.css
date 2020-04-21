@@ -1,6 +1,6 @@
 body {
-    counter-reset: chapter 1;
-    counter-reset: section 1;
+    --chapnum: 0;
+    counter-reset: section 0;
     counter-reset: thmnum 0;
     counter-reset: defnum 0;
     counter-reset: exmnum 0;
@@ -8,7 +8,7 @@ body {
 }
 
 div.section.level1 {
-    counter-increment: chapter;
+    counter-reset: chapter var(--chapnum);
 }
 
 div.section.level2 {
