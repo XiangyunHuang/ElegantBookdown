@@ -1,5 +1,5 @@
 bookdown::gitbook:
-  css: [style.css, thmStyle.css]
+  css: style.css
   split_by: rmd
   config:
     toc:
