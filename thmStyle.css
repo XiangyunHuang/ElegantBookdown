@@ -1,90 +1,120 @@
-body {
-    --chapnum: 0;
-    counter-reset: section 0;
-    counter-reset: thmnum 0;
-    counter-reset: defnum 0;
-    counter-reset: exmnum 0;
-    counter-reset: exrnum 0;
+/* :root {
+    --thm: "Theorem ";
+    --defn: "Definition ";
+    --lem: "Lemma ";
+    --cor: "Corollary ";
+    --prop: "Proposition ";
+    --exer: "Exercise ";
+    --exam: "Example ";
+    --rmk: "Remark ";
+    --pr: "Proof ";
+    --sol: "Solution ";
+} */
+
+:root {
+    --thm: "定理 ";
+    --defn: "定义 ";
+    --lem: "引理 ";
+    --cor: "推论 ";
+    --prop: "命题 ";
+    --exer: "习题 ";
+    --exam: "例题 ";
+    --rmk: "注记 ";
+    --pr: "证明 ";
+    --sol: "解答 ";
 }
 
-div.section.level1 {
+body {
+    --chapnum: 0;
+    /* counter-reset: section 0; */
+    counter-reset: thmnum 0;
+    counter-reset: lemnum 0;
+    counter-reset: cornum 0;
+    counter-reset: propnum 0;
+    counter-reset: defnnum 0;
+    counter-reset: rmknum 0;
+    counter-reset: examnum 0;
+    counter-reset: exernum 0;
+}
+
+.section.level1 {
     counter-reset: chapter var(--chapnum);
 }
 
-div.section.level2 {
-    counter-increment: section;
-}
-
-.thm, .lem, .cor {
+/* Define theorem content styles */
+.thm, .rmdthm, .rmdtheorem, 
+.lem, .rmdlem, .rmdlemma, 
+.cor, .rmdcor, .rmdcorollary, 
+.prop, .rmdprop, .rmdproposition, 
+.defn, .rmddefn, .rmddefinition, 
+.exam, .rmdexam, .rmdexample, 
+.exer, .rmdexer, .rmdexercise, 
+.rmk, .rmdrmk, .rmdremark,  
+.pf, .rmdpf, .rmdproof,
+.sol, .rmdsol, .rmdsolution {
     display: block;
-    border: 1px solid rgb(255,134,24);
-    background-color: rgba(255,134,24,0.05);
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
     margin-bottom: 1em;
     margin-top: 2em;
     padding: 0 7px;
-    counter-increment: thmnum;
+    /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
 }
 
-.prop {
-    margin-top: 2em;
-    display: block;
+.thm, .rmdthm, .rmdtheorem, 
+.lem, .rmdlem, .rmdlemma, 
+.cor, .rmdcor, .rmdcorollary, 
+.prop, .rmdprop, .rmdproposition {
+    font-style: italic;
+}
+
+/* add borders to theorems */
+
+.thm, .rmdthm, .rmdtheorem, 
+.lem, .rmdlem, .rmdlemma, 
+.cor, .rmdcor, .rmdcorollary, 
+.prop, .rmdprop, .rmdproposition, 
+.defn, .rmddefn, .rmddefinition {
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+/* add color to theorem environments */
+
+.thm, .rmdthm, .rmdtheorem, 
+.lem, .rmdlem, .rmdlemma, 
+.cor, .rmdcor, .rmdcorollary {
+    border: 1px solid rgb(115, 245, 40);
+    background-color: rgba(115, 245, 40,0.05);
+}
+
+.prop, .rmdprop, .rmdproposition {
     border: 1px solid rgb(0,174,247);
     background-color: rgba(0,174,247,0.05) ;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-    margin-bottom: 1em;
-    margin-top: 2em;
-    padding: 0 7px;
-    counter-increment: thmnum;
 }
 
-.defn {
-    display: block;
+.defn, .rmddefn, .rmddefinition {
     border: 1px solid rgb(0,166,82);
     background-color: rgba(0,166,82, 0.05);
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-    margin-bottom: 1em;
-    margin-top: 2em;
-    padding: 0 7px;
-    counter-increment: defnum;
 }
 
-.exam, .exer {
-    margin-top: 2em;
-    display: block;
+/* .exam, .rmdexam, .rmdexample, 
+.exer, .rmdexer, .rmdexercise, 
+.rmk, .rmdrmk, .rmdremark {
     border: 1px solid rgba(0,166,82,0.8);
-    /* background-color: rgb(175,153,8); */
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-    margin-bottom: 1em;
-    margin-top: 2em;
-    padding: 0 7px;
-}
+} */
 
+/* setup styles and positions for theorem names */
 
-.exam {
-    counter-increment: exmnum;
-}
-
-.exer {
-    counter-increment: exrnum;
-}
-
-.thm:before {
+.thm::before, .rmdthm::before, .rmdtheorem::before, 
+.defn::before, .rmddefn::before, .rmddefinition::before, 
+.lem::before, .rmdlem::before, .rmdlemma::before, 
+.cor::before, .rmdcor::before, .rmdcorollary::before, 
+.prop::before, .rmdprop::before, .rmdproposition::before {
     display: block;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    /* font-family: Arial, Helvetica, sans-serif; */
     font-weight: bold;
-    content: "定理 " counter(chapter)"."counter(section)"."counter(thmnum) attr(name);
+    font-style: normal;
     float: left;
-    border: 1px solid rgb(255,134,24);
-    background: rgb(255,134,24);
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     border-radius: 5px;
@@ -93,111 +123,119 @@ div.section.level2 {
     padding: 0 7px;
 }
 
-.thm>p:first-child {
+.thm > p:first-child, .rmdthm > p:first-child, .rmdtheorem > p:first-child, 
+.defn > p:first-child, .rmddefn > p:first-child, .rmddefinition > p:first-child, 
+.lem > p:first-child, .rmdlem > p:first-child, .rmdlemma > p:first-child, 
+.cor > p:first-child, .rmdcor > p:first-child, .rmdcorollary > p:first-child, 
+.prop > p:first-child, .rmdprop > p:first-child, .rmdproposition > p:first-child {
     clear: both;
 }
 
-.defn:before {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+.exam::before, .rmdexam::before, .rmdexample::before, 
+.exer::before,  .rmdexer::before, .rmdexercise::before, 
+.rmk::before, .rmdrmk::before, .rmdremark::before, 
+.pf::before, .rmdpf::before, .rmdproof::before, 
+.sol::before, .rmdsol::before, .rmdsolution::before {
+    /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
+    font-style: normal;
     font-weight: bold;
-    content: "定义 " counter(chapter)"."counter(section)"."counter(defnum) attr(name);
     float: left;
-    border: 1px solid rgb(0,166,82);
-    background: rgb(0,166,82);
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-    margin-left: 1em;
-    margin-top: -1em;
-    padding: 0 7px;
+    padding-right:1em;
 }
 
-.defn>p:first-child {
-    clear: both;
+
+/* add colors to theorem names */
+
+.thm::before, .rmdthm::before, .rmdtheorem::before, 
+.lem::before, .rmdlem::before, .rmdlemma::before, 
+.cor::before, .rmdcor::before, .rmdcorollary::before {
+    border: 1px solid rgb(115, 245, 40);
+    background: rgb(115, 245, 40);
 }
 
-.lem:before {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-weight: bold;
-    content: "引理 " counter(chapter)"."counter(section)"."counter(thmnum) attr(name);
-    float: left;
-    border: 1px solid rgb(255,134,24);
-    background: rgb(255,134,24);
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-    margin-left: 1em;
-    margin-top: -1em;
-    padding: 0 7px;
-}
-
-.lem>p:first-child {
-    clear: both;
-}
-    
-.cor:before {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-weight: bold;
-    content: "推论 " counter(chapter)"."counter(section)"."counter(thmnum) attr(name);
-    float: left;
-    border: 1px solid rgb(255,134,24);
-    background: rgb(255,134,24);
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-    margin-left: 1em;
-    margin-top: -1em;
-    padding: 0 7px;
-}
-
-.cor>p:first-child {
-    clear: both;
-}
-
-.prop:before {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-weight: bold;
-    content: "命题 " counter(chapter)"."counter(section)"."counter(thmnum) attr(name);
-    float: left;
+.prop::before, .rmdprop::before, .rmdproposition::before {
     border: 1px solid rgb(0,174,247);
     background: rgb(0,174,247);
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-    margin-left: 1em;
-    margin-top: -1em;
-    padding: 0 7px;
 }
 
-.prop>p:first-child {
-    clear: both;
-}
-    
-.exam:before {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-weight: bold;
-    content: "例题 " counter(chapter)"."counter(section)"."counter(exmnum) attr(name);
-    float: left;
-    padding-right:1em;
+.defn::before, .rmddefn::before, .rmddefinition::before {
+    border: 1px solid rgb(0,166,82);
+    background: rgb(0,166,82);
 }
 
-.exer:before {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-weight: bold;
-    content: "习题 " counter(chapter)"."counter(section)"."counter(exrnum) attr(name);
-    float: left;
-    padding-right:1em;
+/* add numbered theorem names */
+
+.thm, .rmdthm, .rmdtheorem {
+    counter-increment: thmnum;
+}
+.thm::before, .rmdthm::before, .rmdtheorem::before {
+    content: var(--thm) counter(chapter)"."counter(thmnum) " " attr(name); 
 }
 
-.pf::before {
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    content: "证明";
-    float: left;
-    padding-right:1em;
+.lem, .rmdlem, .rmdlemma {
+    counter-increment: lemnum;
+}
+.lem::before, .rmdlem::before, .rmdlemma::before {
+    content: var(--lem) counter(chapter)"."counter(lemnum) " " attr(name);
 }
 
-.pf>p:last-child::after {
+.cor, .rmdcor, .rmdcorollary {
+    counter-increment: cornum;
+}
+.cor::before, .rmdcor::before, .rmdcorollary::before {
+    content: var(--cor) counter(chapter)"."counter(cornum)" "attr(name);
+}
+
+.prop, .rmdprop, .rmdproposition {
+    counter-increment: propnum;
+}
+.prop::before, .rmdprop::before, .rmdproposition::before {
+    content: var(--prop) counter(chapter)"."counter(propnum)" "attr(name);
+}
+
+.defn, .rmddefn, .rmddefinition {
+    counter-increment: defnnum;
+}
+.defn::before, .rmddefn::before, .rmddefinition::before {
+    content: var(--defn) counter(chapter)"."counter(defnnum)" "attr(name);
+}
+
+.exam, .rmdexam, .rmdexample {
+    counter-increment: examnum;
+}
+.exam::before, .rmdexam::before, .rmdexample::before {
+    color: rgb(65, 173, 245);
+    content: var(--exam) counter(chapter)"."counter(examnum)" "attr(name);
+}
+
+.exer,  .rmdexer, .rmdexercise {
+    counter-increment: exernum;
+}
+.exer::before,  .rmdexer::before, .rmdexercise::before {
+    color: rgb(129, 228, 120);
+    content: var(--exer) counter(chapter)"."counter(exernum);
+}
+
+.rmk, .rmdrmk, .rmdremark {
+    counter-increment: rmknum;
+}
+.rmk::before, .rmdrmk::before, .rmdremark::before {
+    color: rgb(219, 84, 106);
+    content: var(--rmk) counter(chapter)"."counter(rmknum);
+}
+
+.pf::before, .rmdpf::before, .rmdproof::before {
+    content: var(--pr);
+}
+
+.sol::before, .rmdsol::before, .rmdsolution::before {
+    content: var(--sol);
+}
+
+/* add square to the end of proof and solution */
+
+.pf > p:last-child::after, .rmdpf > p:last-child::after, .rmdproof > p:last-child::after .sol > p:last-child::after, .rmdsol > p:last-child::after, .rmdsolution > p:last-child::after {
     float: right;
     content: "\25A2";
 }
+
