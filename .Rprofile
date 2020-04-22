@@ -23,6 +23,6 @@ options(bookdown.post.latex = function(x) {
   # fix theorem environments for elegantbook. Remove or modify if other book classes are using!!!
   x <- gsub("(^\\\\BeginKnitrBlock\\{)+(definition|axiom|theorem|lemma|corollary|proposition|postulate)+(\\}$)", "\\1\\2\\3\\{\\}\\{\\}", x)
   x <- gsub("(^\\\\BeginKnitrBlock\\{)+(definition|axiom|theorem|lemma|corollary|proposition|postulate)+(\\})+\\[(.*)\\]", "\\1\\2\\3\\{\\4\\}\\{\\}", x)
-  x <- gsub("(^\\\\\begin\\{)+(definition|axiom|theorem|lemma|corollary|proposition|postulate)+(\\}$)", "\\1\\2\\3\\{\\}\\{\\}", x)
-  x <- gsub("(^\\\\begin\\{)+(definition|axiom|theorem|lemma|corollary|proposition|postulate)+(\\})+(.*)", "\\1\\2\\3\\{\\4\\}\\{\\}", x)
+  # x <- gsub("(^\\\\\begin\\{)+(definition|axiom|theorem|lemma|corollary|proposition|postulate)+(\\}$)", "\\1\\2\\3\\{\\}\\{\\}", x)
+  # x <- gsub("(^\\\\begin\\{)+(definition|axiom|theorem|lemma|corollary|proposition|postulate)+(\\})+(.*)", "\\1\\2\\3\\{\\4\\}\\{\\}", x)
 })

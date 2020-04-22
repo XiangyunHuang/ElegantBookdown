@@ -1,3 +1,5 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
       TeX: {
@@ -6,5 +8,13 @@
         },
         extensions: ["cancel.js"]
       }
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+    const chap =  document.querySelector('.section.level1')
+    var chapnum = parseInt(chap.getAttribute('number'));
+    document.querySelector('body').style.setProperty("--chapnum", chapnum);
     });
 </script>
