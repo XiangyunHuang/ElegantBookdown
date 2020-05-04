@@ -35,4 +35,45 @@
 {}
 {}
 
+%% 自定义块
+\definecolor{colortip}{RGB}{81,183,73}
+\definecolor{colornote}{RGB}{251,188,5}
+\definecolor{colorwarn}{RGB}{255,83,59}
+
+\newtcolorbox{rmdtip}{
+  colback=white, % 背景色
+  colframe=colortip, % 边框色
+  coltext=black, % 文本色
+  leftrule=1mm,
+  rightrule=.25mm,
+  bottomrule=.25mm,
+  toprule=.25mm,
+  boxsep=1pt, % 文字和边框的空隙
+  arc=1pt % 圆角
+}
+
+\newtcolorbox{rmdnote}{
+  colback=white, % 背景色
+  colframe=colornote, % 边框色
+  coltext=black, % 文本色
+  leftrule=1mm,
+  rightrule=.25mm,
+  bottomrule=.25mm,
+  toprule=.25mm,
+  boxsep=1pt, % 文字和边框的空隙
+  arc=1pt % 圆角
+}
+
+\newtcolorbox{rmdwarn}{
+  colback=white, % 背景色
+  colframe=colorwarn, % 边框色
+  coltext=black, % 文本色
+  leftrule=1mm,
+  rightrule=.25mm,
+  bottomrule=.25mm,
+  toprule=.25mm,
+  boxsep=1pt, % 文字和边框的空隙
+  arc=1pt % 圆角
+}
+
 \frontmatter

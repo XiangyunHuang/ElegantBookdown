@@ -17,25 +17,28 @@ function Div(el)
       pandoc.RawBlock("latex", "\\end{shaded}")
     }
   end
+
   if el.classes:includes("rmdwarn") then
     return {
-      pandoc.RawBlock("latex", "\\begin{shaded}\\par\\noindent\\textcolor[RGB]{234,67,53}{\\textbf{警告}}"),
+      pandoc.RawBlock("latex", "\\begin{rmdwarn}\\textcolor[RGB]{255,83,59}{\\Large\\textbf{警告}}"),
       el,
-      pandoc.RawBlock("latex", "\\end{shaded}")
+      pandoc.RawBlock("latex", "\\end{rmdwarn}")
     }
   end
+
   if el.classes:includes("rmdnote") then
     return {
-      pandoc.RawBlock("latex", "\\begin{shaded}\\par\\noindent\\textcolor[RGB]{251,188,5}{\\textbf{注意}}"),
+      pandoc.RawBlock("latex", "\\begin{rmdnote}\\textcolor[RGB]{251,188,5}{\\Large\\textbf{注意}}"),
       el,
-      pandoc.RawBlock("latex", "\\end{shaded}")
+      pandoc.RawBlock("latex", "\\end{rmdnote}")
     }
   end
+
   if el.classes:includes("rmdtip") then
     return {
-      pandoc.RawBlock("latex", "\\begin{shaded}\\par\\noindent\\textcolor[RGB]{52,168,83}{\\textbf{提示}}"),
+      pandoc.RawBlock("latex", "\\begin{rmdtip}\\textcolor[RGB]{81,183,73}{\\Large\\textbf{提示}}"),
       el,
-      pandoc.RawBlock("latex", "\\end{shaded}")
+      pandoc.RawBlock("latex", "\\end{rmdtip}")
     }
   end
 end
