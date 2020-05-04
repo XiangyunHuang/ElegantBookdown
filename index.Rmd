@@ -227,7 +227,7 @@ $$\varphi _{\bar{X}}(t)=\prod_{i=1}^n \varphi _{X_i}\left(\frac{t}{n}\right)=\le
 这是注意
 ::::
 
-::: sidebar
+::: rmdinfo
 普通说明
 :::
 
