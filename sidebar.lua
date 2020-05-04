@@ -10,11 +10,11 @@ function Span(el)
 end
 
 function Div(el)
-  if el.classes:includes("sidebar") then
+  if el.classes:includes("rmdinfo") then
     return {
-      pandoc.RawBlock("latex", "\\begin{shaded}"),
+      pandoc.RawBlock("latex", "\\begin{rmdinfo}"),
       el,
-      pandoc.RawBlock("latex", "\\end{shaded}")
+      pandoc.RawBlock("latex", "\\end{rmdinfo}")
     }
   end
 
