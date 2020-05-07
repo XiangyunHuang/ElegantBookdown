@@ -78,8 +78,8 @@ summary(cars)
 
 1. 不要引入新的 LaTeX 宏包，在我看来，上游 [ElegantBook](https://github.com/ElegantLaTeX/ElegantBook) 使用的宏包已经足够多了，详见 <https://d.cosx.org/d/421349-latex/2>
 2. 书籍风格尽可能简洁，本人信奉 simple is better
-3. 不要自定义 Pandoc's LaTeX 模版，Pandoc 内建的模版已经功能很全面了，下游的 R Markdown 生态已经甩掉了自己造的大量 LaTeX 模版。为保持与下游的完美兼容，也为了更加轻量地输出多种文档格式，尽可能多种输出格式的风格一致。
-4. 本书输出格式目标是 PDF/HTML/EPUB，可以推动上游优化 Pandoc 模版或者 [ElegantBook](https://github.com/ElegantLaTeX/ElegantBook) 模版
+3. 不要自定义 Pandoc's LaTeX 模版，Pandoc 内建的模版已经功能很全面了，下游的 R Markdown 生态已经甩掉了自己造的大量 LaTeX 模版。为保持与下游的完美兼容，也为了更加轻量地输出多种文档格式，也尽可能多地保持多种输出格式的风格一致。
+4. 本书输出格式目标是 HTML/PDF/EPUB，可以推动上游优化 Pandoc 模版或者 [ElegantBook](https://github.com/ElegantLaTeX/ElegantBook) 模版
 
 
 
@@ -172,7 +172,7 @@ $$\varphi _{\bar{X}}(t)=\prod_{i=1}^n \varphi _{X_i}\left(\frac{t}{n}\right)=\le
 
 [^load-bm]: <https://github.com/ElegantLaTeX/ElegantBook/blob/6ab10beda81252f0b478e05fa926199301347e4a/elegantbook.cls#L884>
 
-数学公式加粗可能是最常见的需求之一，所以 **elegantbook** 宏包提供的文类 `elegantbook.cls` 已经调用了 **bm** 宏包 [^load-bm]。有了 **bm** 宏包，就可以使用 **bm** 宏包提供的 `\bm{}` 命令，而不需要写 `\boldsymbol{}` 来加粗希腊字母，如将  $\alpha$ （正常）加粗为 $\bm{\alpha}$（粗体）。要想在 HTML 网页中显示加粗效果，则还不够，默认情况下， MathJax 是不认识 `\bm{}` 命令的，所以需要在 `header.html` 自定义
+数学公式加粗可能是最常见的需求之一， **elegantbook** 宏包提供的文类 `elegantbook.cls` 已经调用了 **bm** 宏包 [^load-bm]。有了 **bm** 宏包，就可以使用 **bm** 宏包提供的 `\bm{}` 命令，而不需要调 `\boldsymbol{}` 加粗希腊字母，如将  $\alpha$ （正常）加粗为 $\bm{\alpha}$（粗体）。为了在 HTML 网页中显示加粗效果，则还不够，默认情况下， MathJax 是不认识 `\bm{}` 命令的，所以需要在 `header.html` 自定义 `\bm{}` 命令：
 
 ```html
 <script type="text/x-mathjax-config">
