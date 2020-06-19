@@ -36,11 +36,8 @@ before_install:
   # TinyTeX
   - Rscript -e 'install.packages("tinytex"); tinytex:::install_prebuilt()'
   - export PATH=$HOME/bin:$PATH
-  - which tlmgr
-  - which kpsewhich
-  - tlmgr option
+  - tlmgr remove mathspec
   - tlmgr install mathspec
-  - kpsewhich framed.sty
   - ls -lhR ~/.TinyTeX/texmf-dist/tex/xelatex/
   - kpsewhich mathspec.sty
   - tlmgr install hyphen-german elegantbook ctex ttfutils xecjk zhnumber listings
