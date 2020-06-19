@@ -36,8 +36,6 @@ before_install:
   # TinyTeX
   - Rscript -e 'install.packages("tinytex"); tinytex:::install_prebuilt()'
   - export PATH=$HOME/bin:$PATH
-  - tlmgr remove mathspec
-  - tlmgr install mathspec
   - tlmgr install hyphen-german elegantbook ctex ttfutils xecjk zhnumber listings
       cancel kastrup anyfontsize esint jknapltx mdwtools
       multirow makecell gbt7714 xpatch pgfornament pgfopts mwe hologo
