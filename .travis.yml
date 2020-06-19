@@ -22,6 +22,9 @@ git:
   depth: 5
   submodules: false
 
+repos:
+  CRAN: https://cloud.r-project.org
+
 addons:
   apt:
     packages:
