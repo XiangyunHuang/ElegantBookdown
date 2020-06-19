@@ -34,9 +34,8 @@ addons:
 
 before_install:
   # TinyTeX
-  - curl -fLo /tmp/tinytex.tar.gz https://travis-bin.yihui.name/tinytex.tar.gz
-  - tar -xzf /tmp/tinytex.tar.gz -C $HOME
-  - export PATH=$HOME/.TinyTeX/bin/x86_64-linux:$PATH
+  - Rscript -e 'install.packages("tinytex"); tinytex:::install_prebuilt()'
+  - export PATH=$HOME/bin:$PATH
   - tlmgr repository list
   #- tlmgr repository add https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet
   - tlmgr option repository https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet
