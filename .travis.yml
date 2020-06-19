@@ -41,8 +41,7 @@ before_install:
   - tlmgr option
   - tlmgr install mathspec
   - kpsewhich framed.sty
-  - find ~/.TinyTeX -name mathspec.sty || true
-  - ls -lh ~/.TinyTeX/texmf-dist/tex/xelatex/mathspec/
+  - ls -lhR ~/.TinyTeX/texmf-dist/tex/xelatex/
   - kpsewhich mathspec.sty
   - tlmgr install hyphen-german elegantbook ctex ttfutils xecjk zhnumber listings
       cancel kastrup anyfontsize esint jknapltx mdwtools
