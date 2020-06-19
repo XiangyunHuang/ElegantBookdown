@@ -36,9 +36,6 @@ before_install:
   # TinyTeX
   - Rscript -e 'install.packages("tinytex"); tinytex:::install_prebuilt()'
   - export PATH=$HOME/bin:$PATH
-  - tlmgr repository list
-  #- tlmgr repository add https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet
-  - tlmgr option repository https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet
   - tlmgr update --self --all
   - tlmgr install hyphen-german elegantbook comment ctex ttfutils ms xecjk ulem zhnumber listings
       cancel kastrup newtx fontaxes anyfontsize esint xcolor enumitem jknapltx mdwtools
