@@ -8,37 +8,3 @@ function Span(el)
     }
   end
 end
-
-function Div(el)
-  if el.classes:includes("rmdinfo") then
-    return {
-      pandoc.RawBlock("latex", "\\begin{rmdinfo}"),
-      el,
-      pandoc.RawBlock("latex", "\\end{rmdinfo}")
-    }
-  end
-
-  if el.classes:includes("rmdwarn") then
-    return {
-      pandoc.RawBlock("latex", "\\begin{rmdwarn}\\textcolor[RGB]{255,83,59}{\\Large\\textbf{警告}}"),
-      el,
-      pandoc.RawBlock("latex", "\\end{rmdwarn}")
-    }
-  end
-
-  if el.classes:includes("rmdnote") then
-    return {
-      pandoc.RawBlock("latex", "\\begin{rmdnote}\\textcolor[RGB]{251,188,5}{\\Large\\textbf{注意}}"),
-      el,
-      pandoc.RawBlock("latex", "\\end{rmdnote}")
-    }
-  end
-
-  if el.classes:includes("rmdtip") then
-    return {
-      pandoc.RawBlock("latex", "\\begin{rmdtip}\\textcolor[RGB]{81,183,73}{\\Large\\textbf{提示}}"),
-      el,
-      pandoc.RawBlock("latex", "\\end{rmdtip}")
-    }
-  end
-end

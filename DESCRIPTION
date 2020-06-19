@@ -3,9 +3,10 @@ Type: Book
 Title: Does not matter.
 Version: 0.0.1
 Imports: bookdown
-URL: https://github.com/XiangyunHuang/ElegantBookdown, https://xiangyunhuang.github.io/ElegantBookdown, https://elegantbookdown.netlify.com/
+URL: https://github.com/XiangyunHuang/ElegantBookdown, https://xiangyunhuang.github.io/ElegantBookdown, https://elegantbookdown.netlify.app/
 BugReports: https://github.com/XiangyunHuang/ElegantBookdown/issues
 License: CCBY-4.0
 Authors@R: person("Xiangyun", "Huang", role = c("aut", "cre"), email = "xiangyunfaith@outlook.com")
 Maintainer: Xiangyun Huang <xiangyunfaith@outlook.com>
 Description: ElegantBookdown.
+SystemRequirements: pandoc (>= 2.9.2) - https://pandoc.org

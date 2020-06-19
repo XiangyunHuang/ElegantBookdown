@@ -215,19 +215,19 @@ $$\varphi _{\bar{X}}(t)=\prod_{i=1}^n \varphi _{X_i}\left(\frac{t}{n}\right)=\le
 
 [要做的还有很多]{.todo}
 
-::: rmdwarn
+::: {.rmdwarn data-latex="{警告}"}
 这是警告
 :::
 
-::: rmdtip
+::: {.rmdtip data-latex="{提示}"}
 这是提示
 :::
 
-:::: rmdnote
+:::: {.rmdnote data-latex="{注意}"}
 这是注意
 ::::
 
-::: rmdinfo
+::: {.rmdinfo}
 普通说明
 :::
 
