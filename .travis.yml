@@ -57,7 +57,7 @@ before_install:
   - chmod +x ./_deploy_error
 
 before_script:
-  - Rscript -e 'update.packages(lib.loc = .libPaths()[1], ask = FALSE)'
+  - Rscript -e 'update.packages(lib.loc = .libPaths()[1], ask = FALSE, checkBuilt = TRUE)'
 
 script:
   - Rscript -e 'bookdown::render_book("index.Rmd", "all")'
