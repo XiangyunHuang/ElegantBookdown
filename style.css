@@ -13,9 +13,9 @@ pre code {
   white-space: inherit;
 }
 
-/* Sidebar formating --------------------------------------------*/
+/* rmdinfo formating --------------------------------------------*/
 
-.sidebar {
+.rmdinfo {
   border: 1px solid #ccc;
 }
 
@@ -31,7 +31,7 @@ pre code {
   border: 1px solid #34A853;
 }
 
-.sidebar, .rmdwarn, .rmdnote, .rmdtip {
+.rmdinfo, .rmdwarn, .rmdnote, .rmdtip {
   border-left-width: 5px;
   border-radius: 5px;
   padding: 1em;
@@ -41,7 +41,7 @@ pre code {
 .book .book-body .page-wrapper .page-inner section.normal div.rmdwarn > :last-child,
 .book .book-body .page-wrapper .page-inner section.normal div.rmdnote > :last-child,
 .book .book-body .page-wrapper .page-inner section.normal div.rmdtip > :last-child,
-.book .book-body .page-wrapper .page-inner section.normal div.sidebar > :last-child {
+.book .book-body .page-wrapper .page-inner section.normal div.rmdinfo > :last-child {
   margin-bottom: 0;
 }
 

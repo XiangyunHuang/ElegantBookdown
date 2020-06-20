@@ -8,8 +8,8 @@
 
 ### 在线预览
 
-- https://bookdown.org/xiangyun/ElegantBookdown/ (stable)
-- https://xiangyunhuang.github.io/ElegantBookdown/ (latest) 
+- https://bookdown.org/xiangyun/elegantbookdown/ (stable)
+- https://xiangyunhuang.github.io/ElegantBookdown/ (latest)
 
 ### 使用环境
 

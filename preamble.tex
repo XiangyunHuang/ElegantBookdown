@@ -35,4 +35,45 @@
 {}
 {}
 
+\definecolor{colortip}{RGB}{81,183,73}
+\definecolor{colornote}{RGB}{251,188,5}
+\definecolor{colorwarn}{RGB}{255,83,59}
+\definecolor{colorinfo}{RGB}{204,204,204}
+
+\tcbset{
+  colbacktitle=white,
+  enhanced,
+  attach boxed title to top center={yshift=-2mm},
+  colback=white, % 背景色
+  coltext=black, % 文本色
+  leftrule=1mm,
+  rightrule=.25mm,
+  bottomrule=.25mm,
+  toprule=.25mm,
+  boxsep=1pt, % 文字和边框的空隙
+  arc=1pt % 圆角
+}
+
+\newtcolorbox{rmdtip}[1]{
+  title=#1,
+  coltitle=colortip,
+  colframe=colortip, % 边框色
+}
+
+\newtcolorbox{rmdnote}[1]{
+  title=#1,
+  coltitle=colornote,
+  colframe=colornote % 边框色
+}
+
+\newtcolorbox{rmdwarn}[1]{
+  title=#1,
+  coltitle=colorwarn,
+  colframe=colorwarn % 边框色
+}
+
+\newtcolorbox{rmdinfo}{
+  colframe=colorinfo % 边框色
+}
+
 \frontmatter

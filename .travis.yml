@@ -21,7 +21,7 @@ pandoc_version: 2.9.2
 git:
   depth: 5
   submodules: false
-  
+
 repos:
   CRAN: https://cloud.r-project.org
 
@@ -34,19 +34,13 @@ addons:
 
 before_install:
   # TinyTeX
-  - curl -fLo /tmp/tinytex.tar.gz https://travis-bin.yihui.name/tinytex.tar.gz
-  - tar -xzf /tmp/tinytex.tar.gz -C $HOME
-  - export PATH=$HOME/.TinyTeX/bin/x86_64-linux:$PATH
-  - tlmgr repository list
-  #- tlmgr repository add https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet
-  - tlmgr option repository https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet
-  - tlmgr update --self --all
-  - tlmgr install elegantbook comment ctex ttfutils ms xecjk ulem zhnumber listings
-      cancel kastrup newtx fontaxes anyfontsize esint xcolor enumitem jknapltx mdwtools
-      multirow makecell lipsum setspace gbt7714 xpatch pgf pgfornament pgfopts mwe hologo
-      titlesec apptools appendix psnfss symbol manfnt bbding tcolorbox environ trimspaces
-      adforn fancyhdr lastpage footmisc rsfs tex-gyre txfonts boondox sourcecodepro subfig
-      adjustbox collectbox
+  - Rscript -e 'install.packages("tinytex"); tinytex:::install_prebuilt()'
+  - export PATH=$HOME/bin:$PATH
+  - tlmgr install hyphen-german elegantbook ctex ttfutils xecjk zhnumber listings
+      cancel kastrup anyfontsize esint jknapltx mdwtools
+      multirow makecell gbt7714 xpatch pgfornament pgfopts mwe hologo
+      apptools manfnt bbding tcolorbox environ adjustbox collectbox
+      adforn footmisc rsfs tex-gyre txfonts boondox sourcecodepro
   # netlify
   - nvm install stable
   - npm install netlify-cli -g
@@ -63,7 +57,7 @@ before_install:
   - chmod +x ./_deploy_error
 
 before_script:
-  - Rscript -e 'update.packages(lib.loc = .libPaths()[1], ask = FALSE)'
+  - Rscript -e 'update.packages(lib.loc = .libPaths()[1], ask = FALSE, checkBuilt = TRUE)'
 
 script:
   - Rscript -e 'bookdown::render_book("index.Rmd", "all")'
