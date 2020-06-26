@@ -3,10 +3,7 @@ Type: Book
 Title: Does not matter.
 Version: 0.0.1
 Imports: 
-  bookdown,
-  knitr
-Remotes: 
-  yihui/knitr
+  bookdown
 URL: https://github.com/XiangyunHuang/ElegantBookdown, https://xiangyunhuang.github.io/ElegantBookdown, https://elegantbookdown.netlify.app/
 BugReports: https://github.com/XiangyunHuang/ElegantBookdown/issues
 License: CCBY-4.0

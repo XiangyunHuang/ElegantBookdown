@@ -14,7 +14,7 @@ lof: yes
 colorlinks: yes
 toccolor: Maroon
 link-citations: yes
-nocite: '@*'
+nocite: '@*'    # 将正文未引用的参考文献也列在书中
 mathspec: yes
 graphics: yes
 subject: "基于 elegantbook 文类的 bookdown 模版"
