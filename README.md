@@ -1,4 +1,4 @@
-[![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable) [![Travis build status](https://travis-ci.com/XiangyunHuang/ElegantBookdown.svg?branch=master)](https://travis-ci.com/XiangyunHuang/ElegantBookdown) ![Repo Size](https://img.shields.io/github/repo-size/XiangyunHuang/ElegantBookdown.svg) ![GitHub](https://img.shields.io/github/license/XiangyunHuang/ElegantBookdown.svg)
+[![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable) [![Book build status](https://github.com/XiangyunHuang/ElegantBookdown/workflows/bookdown/badge.svg?event=push)](https://github.com/XiangyunHuang/ElegantBookdown/actions?workflow=bookdown) ![Repo Size](https://img.shields.io/github/repo-size/XiangyunHuang/ElegantBookdown.svg) ![GitHub](https://img.shields.io/github/license/XiangyunHuang/ElegantBookdown.svg)
 
 ---
 
@@ -8,14 +8,13 @@
 
 ### 在线预览
 
-- https://bookdown.org/xiangyun/elegantbookdown/ (stable)
-- https://xiangyunhuang.github.io/ElegantBookdown/ (latest)
+- https://xiangyunhuang.github.io/elegantbookdown/ (stable)
 
 ### 使用环境
 
-1. [Pandoc](https://github.com/jgm/pandoc) 推荐 **2.9.2**
+1. [Pandoc](https://github.com/jgm/pandoc) 推荐 **2.9.2** 及以上
 1. [TinyTeX](https://yihui.name/tinytex/) 推荐最新版
-1. [R 软件](https://cran.r-project.org/) 和扩展包 [bookdown](https://github.com/rstudio/bookdown) 推荐最新版
+1. [R 软件](https://cran.r-project.org/) 和扩展包 [bookdown](https://github.com/rstudio/bookdown) **0.23** 及以上
 
 ### 如何使用
 

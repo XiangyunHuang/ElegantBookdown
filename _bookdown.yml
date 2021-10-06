@@ -19,6 +19,7 @@ language:
     chapter_name: ["第 ", " 章"]
 
 new_session: yes
+before_chapter_script: _common.R
 
 rmd_files: 
   - "index.Rmd"

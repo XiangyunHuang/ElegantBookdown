@@ -1,0 +1,12 @@
+elegantbook
+csquotes
+fontaxes
+listings
+tcolorbox
+footmisc
+bbding
+titlesec
+multirow
+multicol
+fancyvrb
+anyfontsize
