@@ -49,12 +49,12 @@ jobs:
         run: |
           brew install ghostscript 
           brew install --cask xquartz
-          fc-list :lang=zh | sort
-          fc-list :lang=en | sort
+          # fc-list :lang=zh | sort
+          # fc-list :lang=en | sort
           fc-list : family | sort -f
           ## install fonts
-          curl -fLo Adobe-Fonts.zip https://github.com/XiangyunHuang/fonts/releases/download/v0.1/Adobe-Fonts.zip
-          unzip Adobe-Fonts.zip -d ~/Library/Fonts
+          # curl -fLo Adobe-Fonts.zip https://github.com/XiangyunHuang/fonts/releases/download/v0.1/Adobe-Fonts.zip
+          # unzip Adobe-Fonts.zip -d ~/Library/Fonts
           fc-cache -fsv
   
       - name: Cache R packages
