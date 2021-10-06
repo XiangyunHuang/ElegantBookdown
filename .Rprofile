@@ -1,3 +1,5 @@
+if (file.exists('~/.Rprofile')) sys.source('~/.Rprofile', envir = environment())
+
 options(
   citation.bibtex.max = 999,
   bitmapType = "cairo",
