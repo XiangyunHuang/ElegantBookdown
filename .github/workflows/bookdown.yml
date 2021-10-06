@@ -48,14 +48,15 @@ jobs:
       - name: Install ghostscript and Others
         run: |
           brew install ghostscript 
-          brew tap homebrew/cask-fonts
-          brew install --cask font-noto-serif-cjk-sc font-noto-sans-cjk-sc
           brew install --cask xquartz
-          fc-cache -fsv
           fc-list :lang=zh | sort
           fc-list :lang=en | sort
           fc-list : family | sort -f
-
+          ## install fonts
+          curl -fLo Adobe-Fonts.zip https://github.com/XiangyunHuang/fonts/releases/download/v0.1/Adobe-Fonts.zip
+          unzip Adobe-Fonts.zip -d ~/Library/Fonts
+          fc-cache -fsv
+  
       - name: Cache R packages
         uses: actions/cache@v2
         with:
