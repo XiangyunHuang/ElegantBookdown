@@ -51,6 +51,7 @@ jobs:
           brew tap homebrew/cask-fonts
           brew install --cask font-noto-serif-cjk-sc font-noto-sans-cjk-sc
           brew install --cask xquartz
+          fc-cache -fsv
           fc-list :lang=zh | sort
           fc-list :lang=en | sort
           fc-list : family | sort -f
