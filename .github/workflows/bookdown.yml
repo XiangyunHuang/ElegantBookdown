@@ -47,7 +47,7 @@ jobs:
 
       - name: Install ghostscript and Others
         run: |
-          brew install ghostscript
+          brew install ghostscript font-noto-serif-cjk-sc font-noto-sans-cjk-sc
           brew install --cask xquartz
           fc-list :lang=zh | sort
           fc-list :lang=en | sort
