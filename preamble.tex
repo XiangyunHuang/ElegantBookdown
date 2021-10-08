@@ -7,14 +7,37 @@
 \colorlet{coverlinecolor}{customcolor}
 
 % 字体设置
-\setCJKmainfont[BoldFont={Heiti SC},ItalicFont={Hiragino Sans GB}]{Songti SC} 
-\setCJKsansfont[BoldFont={Heiti SC},ItalicFont={Heiti SC}]{Hiragino Sans GB} 
-\setCJKmonofont[BoldFont={Heiti SC},ItalicFont={Heiti SC}]{Hiragino Sans GB} 
+% \setCJKmainfont[BoldFont={Heiti SC},ItalicFont={Hiragino Sans GB}]{Songti SC} 
+% \setCJKsansfont[BoldFont={Heiti SC},ItalicFont={Heiti SC}]{Hiragino Sans GB} 
+% \setCJKmonofont[BoldFont={Heiti SC},ItalicFont={Heiti SC}]{Hiragino Sans GB}
 
-\setCJKfamilyfont{zhsong}{Songti SC}
-\setCJKfamilyfont{zhhei}{Heiti SC} 
-\setCJKfamilyfont{zhkai}{PingFang SC} 
-\setCJKfamilyfont{zhfs}{Hiragino Sans GB}
+\setCJKmainfont[
+  Path = /Users/runner/Library/Fonts/,
+  BoldFont=NotoSansCJKsc-Bold,
+  ItalicFont=NotoSerifCJKsc-SemiBold,
+  Extension = .otf
+  ]{NotoSerifCJKsc-Regular} 
+\setCJKsansfont[
+  Path = /Users/runner/Library/Fonts/,
+  BoldFont=NotoSansCJKsc-Bold,
+  Extension = .otf
+  ]{NotoSerifCJKsc-SemiBold} 
+\setCJKmonofont[
+  Path = /Users/runner/Library/Fonts/,
+  BoldFont=NotoSansCJKsc-Bold,
+  ItalicFont=NotoSerifCJKsc-SemiBold,
+  Extension = .otf
+  ]{NotoSerifCJKsc-Regular} 
+
+% \setCJKfamilyfont{zhsong}{Songti SC}
+% \setCJKfamilyfont{zhhei}{Heiti SC} 
+% \setCJKfamilyfont{zhkai}{PingFang SC} 
+% \setCJKfamilyfont{zhfs}{Hiragino Sans GB}
+
+\setCJKfamilyfont{zhsong}{Noto Serif CJK SC}
+\setCJKfamilyfont{zhhei}{Noto Sans CJK SC} 
+\setCJKfamilyfont{zhkai}{Noto Serif CJK SC SemiBold} 
+\setCJKfamilyfont{zhfs}{Noto Serif CJK SC}
 
 \newcommand*{\songti}{\CJKfamily{zhsong}} 
 \newcommand*{\heiti}{\CJKfamily{zhhei}} 

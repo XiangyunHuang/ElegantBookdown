@@ -92,3 +92,122 @@ blockquote > p:last-child {
 blockquote > p:first-child {
   text-align: inherit;
 }
+
+/* Theorem style like fancy elegantbook */
+
+div.theorem, 
+div.lemma, 
+div.corollary, 
+div.proposition, 
+div.definition, 
+div.example, 
+div.exercise, 
+div.remark,  
+div.proof,
+div.solution {
+    display: block;
+    margin-bottom: 1em;
+    margin-top: 2em;
+    padding: 0 7px;
+    /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
+}
+
+div.theorem, 
+div.lemma, 
+div.corollary, 
+div.proposition {
+    font-style: italic;
+}
+
+/* add borders to theorems */
+
+div.theorem, 
+div.lemma, 
+div.corollary, 
+div.proposition, 
+div.definition {
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+/* add color to theorem environments */
+
+div.theorem, 
+div.lemma, 
+div.corollary {
+    border: 1px solid rgb(115, 245, 40);
+    background-color: rgba(115, 245, 40,0.05);
+}
+
+div.proposition {
+    border: 1px solid rgb(0,174,247);
+    background-color: rgba(0,174,247,0.05) ;
+}
+
+div.definition {
+    border: 1px solid rgb(0,166,82);
+    background-color: rgba(0,166,82, 0.05);
+}
+
+div.exercise, 
+div.remark {
+    border: 1px solid rgba(0,166,82,0.8);
+}
+
+span.theorem, 
+span.definition, 
+span.lemma, 
+span.corollary, 
+span.proposition {
+    display: block;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    font-weight: bold;
+    font-style: normal;
+    float: left;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    margin-left: 1em;
+    margin-top: -1em;
+    padding: 0 7px;
+}
+
+span.example, 
+span.exercise, 
+span.remark, 
+span.proof, 
+span.solution {
+    /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
+    font-style: normal;
+    font-weight: bold;
+    float: left;
+    padding-right:1em;
+}
+
+/* add colors to theorem names */
+
+span.theorem, 
+span.lemma, 
+span.corollary {
+    border: 1px solid rgb(115, 245, 40);
+    background: rgb(115, 245, 40);
+}
+
+span.proposition {
+    border: 1px solid rgb(0,174,247);
+    background: rgb(0,174,247);
+}
+
+span.definition {
+    border: 1px solid rgb(0,166,82);
+    background: rgb(0,166,82);
+}
+
+/* add square to the end of proof and solution */
+
+.proof > p:last-child::after 
+.solution > p:last-child::after {
+    float: right;
+    content: "\25A2";
+}
