@@ -48,6 +48,8 @@ jobs:
       - name: Install ghostscript and Others
         run: |
           brew install ghostscript
+          brew tap homebrew/cask
+          brew tap homebrew/cask-fonts
           brew install --cask font-noto-sans-cjk-sc
           brew install --cask font-noto-serif-cjk-sc 
           brew install --cask xquartz
