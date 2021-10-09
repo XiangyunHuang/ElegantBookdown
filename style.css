@@ -95,6 +95,14 @@ blockquote > p:first-child {
 
 /* Theorem style like fancy elegantbook */
 
+:root {
+  --themecolor: blue;
+}
+
+h1, h2, h3, h4 {
+  color: var(--structurecolor);
+}
+
 div.theorem, 
 div.lemma, 
 div.corollary, 
@@ -136,24 +144,24 @@ div.definition {
 div.theorem, 
 div.lemma, 
 div.corollary {
-    border: 1px solid rgb(115, 245, 40);
-    background-color: rgba(115, 245, 40,0.05);
+    border: 1px solid var(--second);
+    background-color: var(--secondbg);
 }
 
 div.proposition {
-    border: 1px solid rgb(0,174,247);
-    background-color: rgba(0,174,247,0.05) ;
+    border: 1px solid var(--third);
+    background-color: var(--thirdbg) ;
 }
 
 div.definition {
-    border: 1px solid rgb(0,166,82);
-    background-color: rgba(0,166,82, 0.05);
+  border: 1px solid var(--main);
+  background-color: var(--mainbg) ;
 }
 
-div.exercise, 
+/* div.exercise, 
 div.remark {
     border: 1px solid rgba(0,166,82,0.8);
-}
+} */
 
 span.theorem, 
 span.definition, 
@@ -164,6 +172,7 @@ span.proposition {
     /* font-family: Arial, Helvetica, sans-serif; */
     font-weight: bold;
     font-style: normal;
+    color: white;
     float: left;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
@@ -190,18 +199,18 @@ span.solution {
 span.theorem, 
 span.lemma, 
 span.corollary {
-    border: 1px solid rgb(115, 245, 40);
-    background: rgb(115, 245, 40);
+    border: 1px solid var(--second);
+    background: var(--second);
 }
 
 span.proposition {
-    border: 1px solid rgb(0,174,247);
-    background: rgb(0,174,247);
+    border: 1px solid var(--third);
+    background: var(--third);
 }
 
 span.definition {
-    border: 1px solid rgb(0,166,82);
-    background: rgb(0,166,82);
+    border: 1px solid var(--main);
+    background: var(--main);
 }
 
 /* add square to the end of proof and solution */

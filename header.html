@@ -16,4 +16,59 @@
       s.insertAdjacentHTML('afterend', '<br style="line-height:2px;"/>');
     }
   });
+</script>
+
+<!-- check if --themcolor in style.css matches one of elegantbook theme colors. If so, generates the color palette  -->
+<script>
+  document.addEventListener("DOMContentLoaded", (event) => {
+    const cssroot = document.querySelector(':root');
+    let theme_color = getComputedStyle(document.documentElement).getPropertyValue('--themecolor').trim();
+  
+    switch (theme_color) {
+      case 'blue':
+        cssroot.style.setProperty('--structurecolor', 'rgb(60,113,183)');
+        cssroot.style.setProperty('--main', 'rgb(0,166,82)');
+        cssroot.style.setProperty('--mainbg', 'rgba(0,166,82,0.05)');
+        cssroot.style.setProperty('--second', 'rgb(255,134,24)');
+        cssroot.style.setProperty('--secondbg', 'rgba(255,134,24,0.05)');
+        cssroot.style.setProperty('--third', 'rgb(0,174,247)');
+        cssroot.style.setProperty('--thirdbg', 'rgba(0,174,247,0.05)');
+      break;
+      case 'cyan':
+        cssroot.style.setProperty('--structurecolor', 'rgb(31,186,190)');
+        cssroot.style.setProperty('--main', 'rgb(59,180,5)');
+        cssroot.style.setProperty('--mainbg', 'rgba(59,180,5,0.05)');
+        cssroot.style.setProperty('--second', 'rgb(175,153,8)');
+        cssroot.style.setProperty('--secondbg', 'rgba(175,153,8,0.05)');
+        cssroot.style.setProperty('--third', 'rgb(244,105,102)');
+        cssroot.style.setProperty('--thirdbg', 'rgba(244,105,102,0.05)');
+      break;
+      case 'gray':
+        cssroot.style.setProperty('--structurecolor', 'rgb(150,150,150)');
+        cssroot.style.setProperty('--main', 'rgb(150,150,150)');
+        cssroot.style.setProperty('--mainbg', 'rgba(150,150,150,0.05)');
+        cssroot.style.setProperty('--second', 'rgb(150,150,150)');
+        cssroot.style.setProperty('--secondbg', 'rgba(150,150,150,0.05)');
+        cssroot.style.setProperty('--third', 'rgb(150,150,150)');
+        cssroot.style.setProperty('--thirdbg', 'rgba(150,150,150,0.05)');
+      break;
+      case 'black':
+        cssroot.style.setProperty('--structurecolor', 'rgb(0,0,0)');
+        cssroot.style.setProperty('--main', 'rgb(0,0,0)');
+        cssroot.style.setProperty('--mainbg', 'rgba(0,0,0,0.05)');
+        cssroot.style.setProperty('--second', 'rgb(0,0,0)');
+        cssroot.style.setProperty('--secondbg', 'rgba(0,0,0,0.05)');
+        cssroot.style.setProperty('--third', 'rgb(0,0,0)');
+        cssroot.style.setProperty('--thirdbg', 'rgba(0,0,0,0.05)');
+      break;
+    default:
+      cssroot.style.setProperty('--structurecolor', 'rgb(0,120,2)');
+      cssroot.style.setProperty('--main', 'rgb(70,70,70)');
+      cssroot.style.setProperty('--mainbg', 'rgba(0,166,82,0.05)');
+      cssroot.style.setProperty('--second', 'rgb(115,45,2)');
+      cssroot.style.setProperty('--secondbg', 'rgba(115,45,2,0.05)');
+      cssroot.style.setProperty('--third', 'rgb(0,80,80)');
+      cssroot.style.setProperty('--thirdbg', 'rgba(0,80,80,0.05)');
+    }
+  });
   </script>
