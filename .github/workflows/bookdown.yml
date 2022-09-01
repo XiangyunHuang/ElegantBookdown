@@ -18,13 +18,7 @@ env:
 jobs:
   build:
     if: "!contains(github.event.head_commit.message, '[skip ci]')"
-    runs-on: ${{ matrix.config.os }}
-    name: ${{ matrix.config.os }} (r-${{ matrix.config.r }})
-    strategy:
-      fail-fast: false
-      matrix:
-        config:
-          - {os: macos-11, r: '4.1.1'}
+    runs-on: ubuntu-latest
 
     env:
       LANG: "en_US.UTF-8"
@@ -34,51 +28,20 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
-
-      - name: Setup R
-        uses: r-lib/actions/setup-r@v2
-        with:
-          r-version: ${{ matrix.config.r }}
-
-      - name: Install Pandoc
-        uses: r-lib/actions/setup-pandoc@v2
-        with:
-          pandoc-version: '2.14.1'
-
-      - name: Install ghostscript and Others
-        run: |
-          brew install ghostscript
-          brew tap homebrew/cask
-          brew install --cask xquartz
-          fc-list :lang=zh | sort
-          fc-list :lang=en | sort
-          fc-list : family | sort -f
   
-      - name: Cache R packages
-        uses: actions/cache@v2
+      - name: Install Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
         with:
-          path: ${{ env.R_LIBS_USER }}
-          key: r-${{ matrix.config.os }}-${{ matrix.config.r }}-${{ hashFiles('renv.lock') }}
-          restore-keys: r-${{ matrix.config.os }}-${{ matrix.config.r }}-
+          # To install LaTeX to build PDF book
+          tinytex: true
+          version: 1.1.149
 
-      - name: Cache bookdown results
-        uses: actions/cache@v2
+      - uses: r-lib/actions/setup-r@v2
         with:
-          path: _bookdown_files
-          key: bookdown-${{ matrix.config.os }}-${{ matrix.config.r }}-${{ hashFiles('**/*Rmd') }}
-          restore-keys: bookdown-${{ matrix.config.os }}-${{ matrix.config.r }}-
+          use-public-rspm: true
+          r-version: '4.2.1'
 
-      - name: Install TinyTeX
-        uses: r-lib/actions/setup-tinytex@v2
-        env:
-          # install full prebuilt version
-          TINYTEX_INSTALLER: TinyTeX
-
-      - name: Install R packages
-        run: |
-          if(!require('renv')) install.packages('renv')
-          renv::restore()
-        shell: Rscript {0}
+      - uses: r-lib/actions/setup-r-dependencies@v2
 
       - name: Install LaTeX Packages
         run: |
