@@ -1,40 +1,24 @@
 --- 
-title: "Elegant Bookdown Template"
-subtitle: "优雅的 Bookdown 书籍模版"
+title: "优雅的 Bookdown 书籍模版"
 author: 
-  - 黄湘云 \& 叶 飞
-date: "`r Sys.Date()`"
+  - 黄湘云
+  - 叶 飞
 site: bookdown::bookdown_site
 documentclass: elegantbook
 bibliography: 
  - book.bib
- - packages.bib
-lot: yes
-lof: yes
-colorlinks: yes
-toccolor: Maroon
-link-citations: yes
-nocite: '@*'    # 将正文未引用的参考文献也列在书中
-mathspec: yes
-graphics: yes
-subject: "基于 elegantbook 文类的 bookdown 模版"
-keywords:
-  - elegantbook
-  - bookdown
-  - pandoc
-  - R
-hyperrefoptions:
-- linktoc=all
-- pdfstartview=FitH
+colorlinks: true
+link-citations: true
+mathspec: true
+graphics: true
+lot: true
+lof: true
 github-repo: XiangyunHuang/ElegantBookdown
 classoption: 
  - lang=cn
- - 11pt
- - scheme=chinese
- - chinesefont=nofont
- - citestyle=gb7714-2015
- - bibstyle=gb7714-2015
-description: "最初看到 elegantbook 做的书籍样式很漂亮，就想把它引入到 bookdown 中，遂定制了此模版。在此基础上，做了迁移和扩展的工作，融合了 LaTeX (精美)、Pandoc (简洁) 和 R (强大) 的特性。This is a bookdown template based on ElegantBook. The output format for this template is bookdown::gitbook and bookdown::pdf_book."
+ - titlestyle=hang
+ - chinesefont=ctexfont
+description: "最初看到 elegantbook 做的书籍样式很漂亮，就想把它引入到 bookdown 中，遂定制了此模版。在此基础上，做了迁移和扩展的工作，融合了 LaTeX (精美)、Pandoc (简洁) 和 R (强大) 的特性。"
 ---
 
 \mainmatter
@@ -69,25 +53,11 @@ summary(cars)
 ## 运行环境 {#session-info}
 
 ```{r}
-xfun::session_info(c("rmarkdown", "bookdown", "knitr"), dependencies = FALSE)
+xfun::session_info(c(
+  "rmarkdown", "bookdown", "knitr"
+), dependencies = FALSE)
 ```
 
-文武线
-
-```{r, echo=FALSE}
-# modified from https://github.com/hadley/adv-r/blob/4915e2984168da50671491db238d351e5590c07b/Introduction.Rmd#L264
-ruler <- function(width = getOption("width")) {
-  x <- seq_len(width)
-  y <- ifelse(x %% 10 == 0, as.character((x %/% 10) %% 10),
-    ifelse(x %% 5 == 0, "+", "-")
-  )
-  cat(y, "\n", sep = "")
-  cat(x %% 10, "\n", sep = "")
-}
-```
-```{r, comment=NA}
-ruler()
-```
 
 ## Pandoc 
 
@@ -181,9 +151,3 @@ The distribution of the sum of independent Poisson random variables $X_i \sim \m
 普通说明
 :::
 
-```{r include=FALSE,cache=FALSE}
-# automatically create a bib database for R packages
-knitr::write_bib(c(
-  .packages(), 'bookdown', 'knitr', 'rmarkdown'
-), 'packages.bib')
-```

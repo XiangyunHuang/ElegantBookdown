@@ -25,12 +25,8 @@ bookdown::pdf_book:
   includes:
     in_header: preamble.tex
   latex_engine: xelatex
-  fig_crop: no
-  citation_package: default               # elegantbook 已经设定好了
-  keep_tex: yes
-  toc_depth: 3                         # 目录深度
-  template: null                       # 声明调用 Pandoc 内建的 LaTeX 模版
-  dev: "cairo_pdf"                     # PDF 文档中的插图必须嵌入字体以符合出版要求
+  citation_package: default           # elegantbook 已经设定好了
+  template: null                      # 声明调用 Pandoc 内建的 LaTeX 模版
   pandoc_args: ["--top-level-division=chapter", "--lua-filter=sidebar.lua", "--wrap=none"]
   quote_footer: ["\\hspace*{\\fill} ", ""]
   extra_dependencies:
@@ -44,6 +40,3 @@ bookdown::epub_book:
   epub_version: "epub3"
   stylesheet: style.css
   dev: "png"
-#  pandoc_args: ["--mathjax=math.js"] # 参考 --mathjax https://pandoc.org/MANUAL.html#option--mathjax
-#  pandoc_args: ["--webtex"] # 目前的妥协方案，但是不支持多行公式，相比于放弃 cancel 宏包的功能似乎更加糟糕
-#  pandoc_args: ['--lua-filter=sidebar.lua'] # 虚位以待类似 cancel.js 的东西支持额外的数学库 https://stackoverflow.com/questions/57548218
