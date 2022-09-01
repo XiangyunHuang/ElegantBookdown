@@ -8,7 +8,6 @@ csquotes
 bbding
 titlesec
 multirow
-multicol
 fancyvrb
 hyphen-german
 ctex
@@ -44,3 +43,12 @@ txfonts
 boondox
 sourcecodepro
 fandol
+fancyhdr
+subfig
+mathspec
+setspace
+comment
+newtx
+colortbl
+caption
+tocloft

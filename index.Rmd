@@ -1,5 +1,5 @@
 --- 
-title: "优雅的 Bookdown 书籍模版"
+title: "优雅的 bookdown 书籍模版"
 author: 
   - 黄湘云
   - 叶 飞

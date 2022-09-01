@@ -8,7 +8,7 @@
 
 ### 在线预览
 
-- https://xiangyunhuang.github.io/elegantbookdown/ (stable)
+- <https://xiangyunhuang.github.io/ElegantBookdown/> (stable)
 
 ### 使用环境
 
@@ -33,8 +33,8 @@ git clone --branch=master --depth=1 git@github.com:XiangyunHuang/ElegantBookdown
 
 ### 致谢
 
-1. 项目 [ElegantBook](https://github.com/ElegantLaTeX/ElegantBook) 的开发者 [Ethan Deng 邓东升](https://ddswhu.me/) 和 [Liam Huang 黄晨成](https://liam.page/)
-1. 项目 [bookdown](https://github.com/rstudio/bookdown) 的开发者 [Yihui Xie 谢益辉](https://yihui.name/)
+1. 项目 [ElegantBook](https://github.com/ElegantLaTeX/ElegantBook) 的开发者 [Ethan Deng](https://ddswhu.me/) 和 [Liam Huang](https://liam.page/)
+1. 项目 [bookdown](https://github.com/rstudio/bookdown) 的开发者 [Yihui Xie](https://yihui.name/)
 1. 项目 [Pandoc](https://github.com/jgm/pandoc) 的开发者 [John MacFarlane](https://johnmacfarlane.net/)
 
 > 感谢这些优秀的开源软件，站在巨人的肩膀上，才有现在看到的这个作品！
