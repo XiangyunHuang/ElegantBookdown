@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>优雅的 bookdown 书籍模版</title>
+  <meta name="description" content="最初看到 elegantbook 做的书籍样式很漂亮，就想把它引入到 bookdown 中，遂定制了此模版。在此基础上，做了迁移和扩展的工作，融合了 LaTeX (精美)、Pandoc (简洁) 和 R (强大) 的特性。" />
+  <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="优雅的 bookdown 书籍模版" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="最初看到 elegantbook 做的书籍样式很漂亮，就想把它引入到 bookdown 中，遂定制了此模版。在此基础上，做了迁移和扩展的工作，融合了 LaTeX (精美)、Pandoc (简洁) 和 R (强大) 的特性。" />
+  <meta name="github-repo" content="XiangyunHuang/ElegantBookdown" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="优雅的 bookdown 书籍模版" />
+  
+  <meta name="twitter:description" content="最初看到 elegantbook 做的书籍样式很漂亮，就想把它引入到 bookdown 中，遂定制了此模版。在此基础上，做了迁移和扩展的工作，融合了 LaTeX (精美)、Pandoc (简洁) 和 R (强大) 的特性。" />
+  
+
+<meta name="author" content="黄湘云" />
+<meta name="author" content="叶 飞" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+<link rel="next" href="01-intro.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      TeX: {
+        Macros: {
+          bm: ["{\\boldsymbol #1}",1],
+        },
+        extensions: ["cancel.js"]
+      }
+    });
+</script>
+
+<!-- add line break after theorem title -->
+<script>
+  document.addEventListener("DOMContentLoaded", (event) => {
+    for (let s of document.querySelectorAll("span.theorem, span.lemma, span.proposition, span.corollary")) {
+      s.insertAdjacentHTML('afterend', '<br style="line-height:2px;"/>');
+    }
+  });
+</script>
+
+<!-- check if --themcolor in style.css matches one of elegantbook theme colors. If so, generates the color palette  -->
+<script>
+  document.addEventListener("DOMContentLoaded", (event) => {
+    const cssroot = document.querySelector(':root');
+    let theme_color = getComputedStyle(document.documentElement).getPropertyValue('--themecolor').trim();
+  
+    // blue is the default option
+
+    switch (theme_color) {
+      case 'green': 
+        cssroot.style.setProperty('--structurecolor', 'rgb(0,120,2)');
+        cssroot.style.setProperty('--main', 'rgb(70,70,70)');
+        cssroot.style.setProperty('--mainbg', 'rgba(0,166,82,0.05)');
+        cssroot.style.setProperty('--second', 'rgb(115,45,2)');
+        cssroot.style.setProperty('--secondbg', 'rgba(115,45,2,0.05)');
+        cssroot.style.setProperty('--third', 'rgb(0,80,80)');
+        cssroot.style.setProperty('--thirdbg', 'rgba(0,80,80,0.05)');
+      break;
+      case 'cyan':
+        cssroot.style.setProperty('--structurecolor', 'rgb(31,186,190)');
+        cssroot.style.setProperty('--main', 'rgb(59,180,5)');
+        cssroot.style.setProperty('--mainbg', 'rgba(59,180,5,0.05)');
+        cssroot.style.setProperty('--second', 'rgb(175,153,8)');
+        cssroot.style.setProperty('--secondbg', 'rgba(175,153,8,0.05)');
+        cssroot.style.setProperty('--third', 'rgb(244,105,102)');
+        cssroot.style.setProperty('--thirdbg', 'rgba(244,105,102,0.05)');
+      break;
+      case 'gray':
+        cssroot.style.setProperty('--structurecolor', 'rgb(150,150,150)');
+        cssroot.style.setProperty('--main', 'rgb(150,150,150)');
+        cssroot.style.setProperty('--mainbg', 'rgba(150,150,150,0.05)');
+        cssroot.style.setProperty('--second', 'rgb(150,150,150)');
+        cssroot.style.setProperty('--secondbg', 'rgba(150,150,150,0.05)');
+        cssroot.style.setProperty('--third', 'rgb(150,150,150)');
+        cssroot.style.setProperty('--thirdbg', 'rgba(150,150,150,0.05)');
+      break;
+      case 'black':
+        cssroot.style.setProperty('--structurecolor', 'rgb(0,0,0)');
+        cssroot.style.setProperty('--main', 'rgb(0,0,0)');
+        cssroot.style.setProperty('--mainbg', 'rgba(0,0,0,0.05)');
+        cssroot.style.setProperty('--second', 'rgb(0,0,0)');
+        cssroot.style.setProperty('--secondbg', 'rgba(0,0,0,0.05)');
+        cssroot.style.setProperty('--third', 'rgb(0,0,0)');
+        cssroot.style.setProperty('--thirdbg', 'rgba(0,0,0,0.05)');
+      break;
+    default:
+        cssroot.style.setProperty('--structurecolor', 'rgb(60,113,183)');
+        cssroot.style.setProperty('--main', 'rgb(0,166,82)');
+        cssroot.style.setProperty('--mainbg', 'rgba(0,166,82,0.05)');
+        cssroot.style.setProperty('--second', 'rgb(255,134,24)');
+        cssroot.style.setProperty('--secondbg', 'rgba(255,134,24,0.05)');
+        cssroot.style.setProperty('--third', 'rgb(0,174,247)');
+        cssroot.style.setProperty('--thirdbg', 'rgba(0,174,247,0.05)');
+    }
+  });
+  </script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">优雅的 bookdown 书籍模版</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> 欢迎</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#pr"><i class="fa fa-check"></i><b>1.1</b> 如何参与改进</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#session-info"><i class="fa fa-check"></i><b>1.2</b> 运行环境</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#pandoc"><i class="fa fa-check"></i><b>1.3</b> Pandoc</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#theorem-block"><i class="fa fa-check"></i><b>1.4</b> 已有 Block</a></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#math-formular"><i class="fa fa-check"></i><b>1.5</b> 数学公式</a></li>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#custom-block"><i class="fa fa-check"></i><b>1.6</b> 自定义 block</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="01-intro.html"><a href="01-intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
+<li class="chapter" data-level="3" data-path="02-literature.html"><a href="02-literature.html"><i class="fa fa-check"></i><b>3</b> Literature</a></li>
+<li class="appendix"><span><b>附录</b></span></li>
+<li class="chapter" data-level="A" data-path="07-appendix.html"><a href="07-appendix.html"><i class="fa fa-check"></i><b>A</b> R Markdown</a>
+<ul>
+<li class="chapter" data-level="A.1" data-path="07-appendix.html"><a href="07-appendix.html#including-plots"><i class="fa fa-check"></i><b>A.1</b> Including Plots</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="06-references.html"><a href="06-references.html"><i class="fa fa-check"></i>参考文献</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">优雅的 bookdown 书籍模版</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+<h1 class="title">优雅的 bookdown 书籍模版</h1>
+<p class="author"><em>黄湘云</em></p>
+<p class="author"><em>叶 飞</em></p>
+</div>
+<div id="welcome" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">第 1 章</span> 欢迎<a href="index.html#welcome" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<blockquote>
+<p>A Markdown-formatted document should be publishable as-is, as plain text, without looking like it’s been marked up with tags or formatting instructions.</p>
+<p>— John Gruber</p>
+</blockquote>
+<p>这是一份 R Markodwn 文档。 Markdown 提供一种简洁的格式语法，用来生成 HTML、PDF 和 MS Word 文档。</p>
+<p>当你点击 <strong>Knit</strong> 按钮时，就会生成一份包含正文和代码执行结果的文档。你可以像这样嵌入 R 代码块：</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(cars)</span></code></pre></div>
+<pre><code>##      speed           dist       
+##  Min.   : 4.0   Min.   :  2.00  
+##  1st Qu.:12.0   1st Qu.: 26.00  
+##  Median :15.0   Median : 36.00  
+##  Mean   :15.4   Mean   : 42.98  
+##  3rd Qu.:19.0   3rd Qu.: 56.00  
+##  Max.   :25.0   Max.   :120.00</code></pre>
+<div id="pr" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> 如何参与改进<a href="index.html#pr" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>改进原则</p>
+<ol style="list-style-type: decimal">
+<li>不要引入新的 LaTeX 宏包，在我看来，上游 <a href="https://github.com/ElegantLaTeX/ElegantBook">ElegantBook</a> 使用的宏包已经足够多了，详见 <a href="https://d.cosx.org/d/421349-latex/2" class="uri">https://d.cosx.org/d/421349-latex/2</a></li>
+<li>书籍风格尽可能简洁，本人信奉 simple is better</li>
+<li>不要自定义 Pandoc’s LaTeX 模版，Pandoc 内建的模版已经功能很全面了，下游的 R Markdown 生态已经甩掉了自己造的大量 LaTeX 模版。为保持与下游的完美兼容，也为了更加轻量地输出多种文档格式，也尽可能多地保持多种输出格式的风格一致。</li>
+<li>本书输出格式目标是 HTML/PDF/EPUB，可以推动上游优化 Pandoc 模版或者 <a href="https://github.com/ElegantLaTeX/ElegantBook">ElegantBook</a> 模版</li>
+</ol>
+</div>
+<div id="session-info" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> 运行环境<a href="index.html#session-info" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="index.html#cb3-1" aria-hidden="true" tabindex="-1"></a>xfun<span class="sc">::</span><span class="fu">session_info</span>(<span class="fu">c</span>(</span>
+<span id="cb3-2"><a href="index.html#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;rmarkdown&quot;</span>, <span class="st">&quot;bookdown&quot;</span>, <span class="st">&quot;knitr&quot;</span></span>
+<span id="cb3-3"><a href="index.html#cb3-3" aria-hidden="true" tabindex="-1"></a>), <span class="at">dependencies =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<pre><code>## R version 4.2.1 (2022-06-23)
+## Platform: x86_64-pc-linux-gnu (64-bit)
+## Running under: Ubuntu 22.04.1 LTS
+## 
+## Locale:
+##   LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+##   LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+##   LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
+##   LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+##   LC_ADDRESS=C               LC_TELEPHONE=C            
+##   LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+## 
+## Package version:
+##   bookdown_0.31  knitr_1.41     rmarkdown_2.19
+## 
+## Pandoc version: 2.17.1</code></pre>
+</div>
+<div id="pandoc" class="section level2 hasAnchor" number="1.3">
+<h2><span class="header-section-number">1.3</span> Pandoc<a href="index.html#pandoc" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Pandoc 自诞生以来已历 15 个春秋，Github 星级 18.5k，而日常使用的 Hive 不过区区 3k。Pandoc 现已被各大 Linux 发行版（如 CentOS/Ubuntu 等）收录。下面给出一个使用 Pandoc 的简单例子</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="index.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&quot;hello, world!&quot;</span> <span class="op">&gt;</span> note.md</span>
+<span id="cb5-2"><a href="index.html#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pandoc</span> note.md <span class="at">-s</span> <span class="at">-o</span> note.tex <span class="co"># markdown 文本转化为 tex 文本</span></span>
+<span id="cb5-3"><a href="index.html#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="ex">pandoc</span> note.md <span class="at">-o</span> note.pdf    <span class="co"># markdown 文本转化为 pdf 文档</span></span>
+<span id="cb5-4"><a href="index.html#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="ex">pandoc</span> note.md <span class="at">-o</span> note.html   <span class="co"># markdown 文本转化为 html 文档</span></span></code></pre></div>
+<p>Pandoc 支持数十种文档输出格式，更多命令参数说明见 <a href="https://pandoc.org/MANUAL.html" class="uri">https://pandoc.org/MANUAL.html</a>。可不可以不要 R，也不要 R Markdown 呢？当然可以，详见 <a href="https://github.com/annProg/PanBook" class="uri">https://github.com/annProg/PanBook</a>，基于 Pandoc’s Markdown 实现一次写作，多样输出！</p>
+</div>
+<div id="theorem-block" class="section level2 hasAnchor" number="1.4">
+<h2><span class="header-section-number">1.4</span> 已有 Block<a href="index.html#theorem-block" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="lemma">
+<p><span id="lem:chf-pdf" class="lemma"><strong>引理 1.1  </strong></span>For any two random variables <span class="math inline">\(X_1\)</span>, <span class="math inline">\(X_2\)</span>, they both have the same probability distribution if and only if
+<span class="math display">\[\varphi _{X_1}(t)=\varphi _{X_2}(t)\]</span></p>
+</div>
+<div class="theorem">
+<p><span id="thm:chf-sum" class="theorem"><strong>定理 1.1  </strong></span>If <span class="math inline">\(X_1\)</span>, …, <span class="math inline">\(X_n\)</span> are independent random variables, and <span class="math inline">\(a_1\)</span>, …, <span class="math inline">\(a_n\)</span> are some constants, then the characteristic function of the linear combination <span class="math inline">\(S_n=\sum_{i=1}^na_iX_i\)</span> is
+<span class="math display">\[\varphi _{S_{n}}(t)=\prod_{i=1}^n\varphi _{X_i}(a_{i}t)=\varphi _{X_{1}}(a_{1}t)\cdots \varphi _{X_{n}}(a_{n}t)\]</span></p>
+</div>
+<div class="proposition">
+<p><span id="prp:unnamed-chunk-2" class="proposition"><strong>命题 1.1  </strong></span>The distribution of the sum of independent Poisson random variables <span class="math inline">\(X_i \sim \mathrm{Pois}(\lambda_i),\: i=1,2,\cdots,n\)</span> is <span class="math inline">\(\mathrm{Pois}(\sum_{i=1}^n\lambda_i)\)</span>.</p>
+</div>
+</div>
+<div id="math-formular" class="section level2 hasAnchor" number="1.5">
+<h2><span class="header-section-number">1.5</span> 数学公式<a href="index.html#math-formular" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>数学公式加粗可能是最常见的需求之一， <strong>elegantbook</strong> 宏包提供的文类 <code>elegantbook.cls</code> 已经调用了 <strong>bm</strong> 宏包 <a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>。有了 <strong>bm</strong> 宏包，就可以使用 <strong>bm</strong> 宏包提供的 <code>\bm{}</code> 命令，而不需要调 <code>\boldsymbol{}</code> 加粗希腊字母，如将 <span class="math inline">\(\alpha\)</span> （正常）加粗为 <span class="math inline">\(\bm{\alpha}\)</span>（粗体）。为了在 HTML 网页中显示加粗效果，则还不够，默认情况下， MathJax 是不认识 <code>\bm{}</code> 命令的，所以需要在 <code>header.html</code> 自定义 <code>\bm{}</code> 命令：</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb6-1"><a href="index.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">&quot;text/x-mathjax-config&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb6-2"><a href="index.html#cb6-2" aria-hidden="true" tabindex="-1"></a>    MathJax<span class="op">.</span><span class="at">Hub</span><span class="op">.</span><span class="fu">Config</span>({</span>
+<span id="cb6-3"><a href="index.html#cb6-3" aria-hidden="true" tabindex="-1"></a>      <span class="dt">TeX</span><span class="op">:</span> {</span>
+<span id="cb6-4"><a href="index.html#cb6-4" aria-hidden="true" tabindex="-1"></a>        <span class="dt">Macros</span><span class="op">:</span> {</span>
+<span id="cb6-5"><a href="index.html#cb6-5" aria-hidden="true" tabindex="-1"></a>          <span class="dt">bm</span><span class="op">:</span> [<span class="st">&quot;{</span><span class="sc">\\</span><span class="st">boldsymbol #1}&quot;</span><span class="op">,</span><span class="dv">1</span>]<span class="op">,</span></span>
+<span id="cb6-6"><a href="index.html#cb6-6" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb6-7"><a href="index.html#cb6-7" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb6-8"><a href="index.html#cb6-8" aria-hidden="true" tabindex="-1"></a>    })<span class="op">;</span></span>
+<span id="cb6-9"><a href="index.html#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/script&gt;</span></span></code></pre></div>
+<p>进一步地，使用常用的 3 个取消符号 <span class="math inline">\(\bcancel{///}\)</span> 需要在 <code>header.html</code> 添加 JS 库 <code>cancel.js</code>，</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb7-1"><a href="index.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">&quot;text/x-mathjax-config&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb7-2"><a href="index.html#cb7-2" aria-hidden="true" tabindex="-1"></a>    MathJax<span class="op">.</span><span class="at">Hub</span><span class="op">.</span><span class="fu">Config</span>({</span>
+<span id="cb7-3"><a href="index.html#cb7-3" aria-hidden="true" tabindex="-1"></a>      <span class="dt">TeX</span><span class="op">:</span> {</span>
+<span id="cb7-4"><a href="index.html#cb7-4" aria-hidden="true" tabindex="-1"></a>        <span class="dt">Macros</span><span class="op">:</span> {</span>
+<span id="cb7-5"><a href="index.html#cb7-5" aria-hidden="true" tabindex="-1"></a>          <span class="dt">bm</span><span class="op">:</span> [<span class="st">&quot;{</span><span class="sc">\\</span><span class="st">boldsymbol #1}&quot;</span><span class="op">,</span><span class="dv">1</span>]<span class="op">,</span></span>
+<span id="cb7-6"><a href="index.html#cb7-6" aria-hidden="true" tabindex="-1"></a>        }<span class="op">,</span></span>
+<span id="cb7-7"><a href="index.html#cb7-7" aria-hidden="true" tabindex="-1"></a>        <span class="dt">extensions</span><span class="op">:</span> [<span class="st">&quot;cancel.js&quot;</span>]</span>
+<span id="cb7-8"><a href="index.html#cb7-8" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb7-9"><a href="index.html#cb7-9" aria-hidden="true" tabindex="-1"></a>    })<span class="op">;</span></span>
+<span id="cb7-10"><a href="index.html#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/script&gt;</span></span></code></pre></div>
+<p>并在 preamble.tex 文件中添加一行代码加载 <strong>cancel</strong> 宏包</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb8-1"><a href="index.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">\usepackage</span>[makeroom]{<span class="ex">cancel</span>}</span></code></pre></div>
+</div>
+<div id="custom-block" class="section level2 hasAnchor" number="1.6">
+<h2><span class="header-section-number">1.6</span> 自定义 block<a href="index.html#custom-block" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>基于 Pandoc 自定义 block 是一件很有意思的事情，目前不想让模版过于复杂，仅给出几个最常用的例子。如何自定义可以去看谢益辉的新书 <a href="https://bookdown.org/yihui/rmarkdown-cookbook/custom-blocks.html" class="uri">https://bookdown.org/yihui/rmarkdown-cookbook/custom-blocks.html</a>。</p>
+<p><span class="todo">要做的还有很多</span></p>
+<div class="rmdwarn">
+<p>这是警告</p>
+</div>
+<div class="rmdtip">
+<p>这是提示</p>
+</div>
+<div class="rmdnote">
+<p>这是注意</p>
+</div>
+<div class="rmdinfo">
+<p>普通说明</p>
+</div>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p><a href="https://github.com/ElegantLaTeX/ElegantBook/blob/6ab10beda81252f0b478e05fa926199301347e4a/elegantbook.cls#L884" class="uri">https://github.com/ElegantLaTeX/ElegantBook/blob/6ab10beda81252f0b478e05fa926199301347e4a/elegantbook.cls#L884</a><a href="index.html#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+<a href="01-intro.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": {}
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/XiangyunHuang/masr/edit/master/index.Rmd",
+"text": "编辑"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/XiangyunHuang/masr/blob/master/index.Rmd",
+"text": "查看"
+},
+"download": ["elegantbookdown.pdf", "elegantbookdown.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

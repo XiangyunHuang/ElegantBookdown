@@ -1,0 +1,17 @@
+lem:chf-pdf
+thm:chf-sum
+prp:unnamed-chunk-2
+fig:nice-fig
+tab:nice-tab
+fig:nice-fig-02
+welcome
+pr
+session-info
+pandoc
+theorem-block
+math-formular
+custom-block
+intro
+literature
+r-markdown
+including-plots
