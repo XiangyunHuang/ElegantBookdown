@@ -1,0 +1,222 @@
+.caption {
+  color: #777;
+  margin-top: 10px;
+}
+p code {
+  white-space: inherit;
+}
+pre {
+  word-break: normal;
+  word-wrap: normal;
+}
+pre code {
+  white-space: inherit;
+}
+
+/* rmdinfo formating --------------------------------------------*/
+
+.rmdinfo {
+  border: 1px solid #ccc;
+}
+
+.rmdwarn {
+  border: 1px solid #EA4335;
+}
+
+.rmdnote {
+  border: 1px solid #FBBC05;
+}
+
+.rmdtip {
+  border: 1px solid #34A853;
+}
+
+.rmdinfo, .rmdwarn, .rmdnote, .rmdtip {
+  border-left-width: 5px;
+  border-radius: 5px;
+  padding: 1em;
+  margin: 1em 0;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal div.rmdwarn > :last-child,
+.book .book-body .page-wrapper .page-inner section.normal div.rmdnote > :last-child,
+.book .book-body .page-wrapper .page-inner section.normal div.rmdtip > :last-child,
+.book .book-body .page-wrapper .page-inner section.normal div.rmdinfo > :last-child {
+  margin-bottom: 0;
+}
+
+div.rmdwarn::before, div.rmdnote::before, div.rmdtip::before {
+  display: block;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-bottom: 0.25em;
+}
+
+div.rmdwarn::before {
+  content: "警告";
+  color: #EA4335;
+}
+
+div.rmdnote::before {
+  content: "注意";
+  color: #FBBC05;
+}
+
+div.rmdtip::before {
+  content: "提示";
+  color: #34A853;
+}
+
+.todo {
+  display: block;
+  border: 1px solid #4285f4;
+  border-left-width: 5px;
+  border-radius: 5px;
+  padding: 0.5em 1em;
+  margin: 1em 0;
+}
+
+.todo::before {
+  content: "TO DO: ";
+  font-weight: bold;
+  color: #4285f4;
+}
+
+.flushright {
+  text-align: right;
+}
+
+blockquote > p:last-child {
+  text-align: right;
+}
+blockquote > p:first-child {
+  text-align: inherit;
+}
+
+/* Theorem style like fancy elegantbook */
+
+:root {
+  --themecolor: blue;
+}
+
+h1, h2, h3, h4 {
+  color: var(--structurecolor);
+}
+
+div.theorem, 
+div.lemma, 
+div.corollary, 
+div.proposition, 
+div.definition, 
+div.example, 
+div.exercise, 
+div.remark,  
+div.proof,
+div.solution {
+    display: block;
+    margin-bottom: 1em;
+    margin-top: 2em;
+    padding: 0 7px;
+    /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
+}
+
+div.theorem, 
+div.lemma, 
+div.corollary, 
+div.proposition {
+    font-style: italic;
+}
+
+/* add borders to theorems */
+
+div.theorem, 
+div.lemma, 
+div.corollary, 
+div.proposition, 
+div.definition {
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+/* add color to theorem environments */
+
+div.theorem, 
+div.lemma, 
+div.corollary {
+    border: 1px solid var(--second);
+    background-color: var(--secondbg);
+}
+
+div.proposition {
+    border: 1px solid var(--third);
+    background-color: var(--thirdbg) ;
+}
+
+div.definition {
+  border: 1px solid var(--main);
+  background-color: var(--mainbg) ;
+}
+
+/* div.exercise, 
+div.remark {
+    border: 1px solid rgba(0,166,82,0.8);
+} */
+
+span.theorem, 
+span.definition, 
+span.lemma, 
+span.corollary, 
+span.proposition {
+    display: block;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    font-weight: bold;
+    font-style: normal;
+    color: white;
+    float: left;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    margin-left: 1em;
+    margin-top: -1em;
+    padding: 0 7px;
+}
+
+span.example, 
+span.exercise, 
+span.remark, 
+span.proof, 
+span.solution {
+    /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
+    font-style: normal;
+    font-weight: bold;
+    float: left;
+    padding-right:1em;
+}
+
+/* add colors to theorem names */
+
+span.theorem, 
+span.lemma, 
+span.corollary {
+    border: 1px solid var(--second);
+    background: var(--second);
+}
+
+span.proposition {
+    border: 1px solid var(--third);
+    background: var(--third);
+}
+
+span.definition {
+    border: 1px solid var(--main);
+    background: var(--main);
+}
+
+/* add square to the end of proof and solution */
+
+.proof > p:last-child::after 
+.solution > p:last-child::after {
+    float: right;
+    content: "\25A2";
+}
